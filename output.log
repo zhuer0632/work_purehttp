@@ -1,0 +1,269 @@
+2013-04-19 11:15:39 [commonTest.StringTest]-[DEBUG] 
+2013-04-19 11:16:14 [commonTest.StringTest]-[DEBUG] 
+2013-04-19 11:17:58 [commonTest.StringTest]-[DEBUG] D:	omcat6bin
+2013-04-19 11:18:20 [commonTest.StringTest]-[DEBUG] D:\tomcat6\bin
+2013-04-19 11:18:56 [org.quartz.simpl.SimpleThreadPool]-[INFO] Job execution threads will use class loader of thread: main
+2013-04-19 11:18:56 [org.quartz.core.QuartzScheduler]-[INFO] Quartz Scheduler v.1.5.2 created.
+2013-04-19 11:18:56 [org.quartz.simpl.RAMJobStore]-[INFO] RAMJobStore initialized.
+2013-04-19 11:18:56 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2013-04-19 11:18:56 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler version: 1.5.2
+2013-04-19 11:18:56 [org.quartz.core.QuartzScheduler]-[INFO] Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2013-04-19 11:18:56 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:18:56 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:18:56 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:18:56 CST 2013
+2013-04-19 11:18:57 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:18:57 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:18:57 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:18:57 CST 2013
+2013-04-19 11:18:58 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:18:58 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:18:58 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:18:58 CST 2013
+2013-04-19 11:18:59 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:18:59 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:18:59 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:18:59 CST 2013
+2013-04-19 11:19:00 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:19:00 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:19:00 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:19:00 CST 2013
+2013-04-19 11:19:12 [org.quartz.simpl.SimpleThreadPool]-[INFO] Job execution threads will use class loader of thread: main
+2013-04-19 11:19:12 [org.quartz.core.QuartzScheduler]-[INFO] Quartz Scheduler v.1.5.2 created.
+2013-04-19 11:19:12 [org.quartz.simpl.RAMJobStore]-[INFO] RAMJobStore initialized.
+2013-04-19 11:19:12 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2013-04-19 11:19:12 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler version: 1.5.2
+2013-04-19 11:19:12 [org.quartz.core.QuartzScheduler]-[INFO] Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2013-04-19 11:19:12 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:19:12 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:19:12 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:19:12 CST 2013
+2013-04-19 11:19:14 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:19:14 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:19:14 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:19:14 CST 2013
+2013-04-19 11:19:16 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:19:16 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:19:16 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:19:16 CST 2013
+2013-04-19 11:21:35 [org.quartz.simpl.SimpleThreadPool]-[INFO] Job execution threads will use class loader of thread: main
+2013-04-19 11:21:35 [org.quartz.core.QuartzScheduler]-[INFO] Quartz Scheduler v.1.5.2 created.
+2013-04-19 11:21:35 [org.quartz.simpl.RAMJobStore]-[INFO] RAMJobStore initialized.
+2013-04-19 11:21:35 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2013-04-19 11:21:35 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler version: 1.5.2
+2013-04-19 11:21:35 [org.quartz.core.QuartzScheduler]-[INFO] Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2013-04-19 11:21:40 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:21:40 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:21:40 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:21:40 CST 2013
+2013-04-19 11:21:40 [com.me.ut.exe.RunExe]-[DEBUG] 执行结果：1>>>0表示成功，其他是错误
+2013-04-19 11:21:50 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:21:50 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:21:50 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:21:50 CST 2013
+2013-04-19 11:21:50 [com.me.ut.exe.RunExe]-[DEBUG] 执行结果：1>>>0表示成功，其他是错误
+2013-04-19 11:22:32 [org.quartz.simpl.SimpleThreadPool]-[INFO] Job execution threads will use class loader of thread: main
+2013-04-19 11:22:32 [org.quartz.core.QuartzScheduler]-[INFO] Quartz Scheduler v.1.5.2 created.
+2013-04-19 11:22:32 [org.quartz.simpl.RAMJobStore]-[INFO] RAMJobStore initialized.
+2013-04-19 11:22:32 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2013-04-19 11:22:32 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler version: 1.5.2
+2013-04-19 11:22:32 [org.quartz.core.QuartzScheduler]-[INFO] Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2013-04-19 11:22:40 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:22:40 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:22:40 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:22:40 CST 2013
+2013-04-19 11:22:40 [com.me.ut.exe.RunExe]-[DEBUG] 执行结果：0>>>0表示成功，其他是错误
+2013-04-19 11:22:50 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:22:50 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:22:50 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:22:50 CST 2013
+2013-04-19 11:22:50 [com.me.ut.exe.RunExe]-[DEBUG] 执行结果：0>>>0表示成功，其他是错误
+2013-04-19 11:23:00 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:23:00 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:23:00 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:23:00 CST 2013
+2013-04-19 11:23:00 [com.me.ut.exe.RunExe]-[DEBUG] 执行结果：0>>>0表示成功，其他是错误
+2013-04-19 11:23:10 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:23:10 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:23:10 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:23:10 CST 2013
+2013-04-19 11:23:10 [com.me.ut.exe.RunExe]-[DEBUG] 执行结果：0>>>0表示成功，其他是错误
+2013-04-19 11:23:20 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:23:20 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:23:20 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:23:20 CST 2013
+2013-04-19 11:23:20 [com.me.ut.exe.RunExe]-[DEBUG] 执行结果：0>>>0表示成功，其他是错误
+2013-04-19 11:23:30 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:23:30 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:23:30 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:23:30 CST 2013
+2013-04-19 11:23:30 [com.me.ut.exe.RunExe]-[DEBUG] 执行结果：0>>>0表示成功，其他是错误
+2013-04-19 11:23:40 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:23:40 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:23:40 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:23:40 CST 2013
+2013-04-19 11:23:40 [com.me.ut.exe.RunExe]-[DEBUG] 执行结果：0>>>0表示成功，其他是错误
+2013-04-19 11:23:50 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:23:50 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:23:50 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:23:50 CST 2013
+2013-04-19 11:23:50 [com.me.ut.exe.RunExe]-[DEBUG] 执行结果：0>>>0表示成功，其他是错误
+2013-04-19 11:24:00 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:24:00 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:24:00 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:24:00 CST 2013
+2013-04-19 11:24:00 [com.me.ut.exe.RunExe]-[DEBUG] 执行结果：0>>>0表示成功，其他是错误
+2013-04-19 11:42:29 [org.quartz.simpl.SimpleThreadPool]-[INFO] Job execution threads will use class loader of thread: main
+2013-04-19 11:42:29 [org.quartz.core.QuartzScheduler]-[INFO] Quartz Scheduler v.1.5.2 created.
+2013-04-19 11:42:29 [org.quartz.simpl.RAMJobStore]-[INFO] RAMJobStore initialized.
+2013-04-19 11:42:29 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2013-04-19 11:42:29 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler version: 1.5.2
+2013-04-19 11:42:29 [org.quartz.core.QuartzScheduler]-[INFO] Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2013-04-19 11:42:30 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:42:30 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:42:30 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:42:30 CST 2013
+2013-04-19 11:42:40 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:42:40 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:42:40 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:42:40 CST 2013
+2013-04-19 11:42:42 [com.me.ut.exe.RunExe]-[DEBUG] 执行结果：0>>>0表示成功，其他是错误
+2013-04-19 11:42:42 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/start.bat
+2013-04-19 11:42:44 [com.me.ut.exe.RunExe]-[DEBUG] 执行结果：0>>>0表示成功，其他是错误
+2013-04-19 11:42:44 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/start.bat
+2013-04-19 11:43:23 [org.quartz.simpl.SimpleThreadPool]-[INFO] Job execution threads will use class loader of thread: main
+2013-04-19 11:43:23 [org.quartz.core.QuartzScheduler]-[INFO] Quartz Scheduler v.1.5.2 created.
+2013-04-19 11:43:23 [org.quartz.simpl.RAMJobStore]-[INFO] RAMJobStore initialized.
+2013-04-19 11:43:23 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2013-04-19 11:43:23 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler version: 1.5.2
+2013-04-19 11:43:23 [org.quartz.core.QuartzScheduler]-[INFO] Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2013-04-19 11:43:30 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:43:30 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:43:30 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:43:30 CST 2013
+2013-04-19 11:43:40 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:43:40 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:43:40 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:43:40 CST 2013
+2013-04-19 11:43:42 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/start.bat
+2013-04-19 11:44:03 [org.quartz.simpl.SimpleThreadPool]-[INFO] Job execution threads will use class loader of thread: main
+2013-04-19 11:44:03 [org.quartz.core.QuartzScheduler]-[INFO] Quartz Scheduler v.1.5.2 created.
+2013-04-19 11:44:03 [org.quartz.simpl.RAMJobStore]-[INFO] RAMJobStore initialized.
+2013-04-19 11:44:03 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2013-04-19 11:44:03 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler version: 1.5.2
+2013-04-19 11:44:03 [org.quartz.core.QuartzScheduler]-[INFO] Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2013-04-19 11:44:10 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:44:10 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:44:10 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:44:10 CST 2013
+2013-04-19 11:44:10 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/start.bat
+2013-04-19 11:44:20 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:44:20 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:44:20 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:44:20 CST 2013
+2013-04-19 11:44:20 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/start.bat
+2013-04-19 11:44:57 [org.quartz.simpl.SimpleThreadPool]-[INFO] Job execution threads will use class loader of thread: main
+2013-04-19 11:44:57 [org.quartz.core.QuartzScheduler]-[INFO] Quartz Scheduler v.1.5.2 created.
+2013-04-19 11:44:57 [org.quartz.simpl.RAMJobStore]-[INFO] RAMJobStore initialized.
+2013-04-19 11:44:57 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2013-04-19 11:44:57 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler version: 1.5.2
+2013-04-19 11:44:57 [org.quartz.core.QuartzScheduler]-[INFO] Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2013-04-19 11:45:00 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:45:00 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:45:00 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:45:00 CST 2013
+2013-04-19 11:45:00 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/start.bat
+2013-04-19 11:50:16 [org.quartz.simpl.SimpleThreadPool]-[INFO] Job execution threads will use class loader of thread: main
+2013-04-19 11:50:16 [org.quartz.core.QuartzScheduler]-[INFO] Quartz Scheduler v.1.5.2 created.
+2013-04-19 11:50:16 [org.quartz.simpl.RAMJobStore]-[INFO] RAMJobStore initialized.
+2013-04-19 11:50:16 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2013-04-19 11:50:16 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler version: 1.5.2
+2013-04-19 11:50:16 [org.quartz.core.QuartzScheduler]-[INFO] Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2013-04-19 11:50:20 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:50:20 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:50:20 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:50:20 CST 2013
+2013-04-19 11:50:20 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/bin/start.bat
+2013-04-19 11:50:30 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:50:30 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:50:30 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:50:30 CST 2013
+2013-04-19 11:50:30 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/bin/start.bat
+2013-04-19 11:50:40 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:50:40 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:50:40 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:50:40 CST 2013
+2013-04-19 11:50:40 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/bin/start.bat
+2013-04-19 11:51:38 [org.quartz.simpl.SimpleThreadPool]-[INFO] Job execution threads will use class loader of thread: main
+2013-04-19 11:51:38 [org.quartz.core.QuartzScheduler]-[INFO] Quartz Scheduler v.1.5.2 created.
+2013-04-19 11:51:38 [org.quartz.simpl.RAMJobStore]-[INFO] RAMJobStore initialized.
+2013-04-19 11:51:38 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2013-04-19 11:51:38 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler version: 1.5.2
+2013-04-19 11:51:38 [org.quartz.core.QuartzScheduler]-[INFO] Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2013-04-19 11:51:40 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:51:40 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:51:40 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:51:40 CST 2013
+2013-04-19 11:51:40 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/bin/stop.bat
+2013-04-19 11:51:40 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/bin/start.bat
+2013-04-19 11:51:50 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:51:50 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:51:50 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:51:50 CST 2013
+2013-04-19 11:51:50 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/bin/stop.bat
+2013-04-19 11:51:50 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/bin/start.bat
+2013-04-19 11:52:00 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:52:00 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:52:00 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:52:00 CST 2013
+2013-04-19 11:52:00 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/bin/stop.bat
+2013-04-19 11:52:00 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/bin/start.bat
+2013-04-19 11:54:30 [org.quartz.simpl.SimpleThreadPool]-[INFO] Job execution threads will use class loader of thread: main
+2013-04-19 11:54:30 [org.quartz.core.QuartzScheduler]-[INFO] Quartz Scheduler v.1.5.2 created.
+2013-04-19 11:54:30 [org.quartz.simpl.RAMJobStore]-[INFO] RAMJobStore initialized.
+2013-04-19 11:54:30 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2013-04-19 11:54:30 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler version: 1.5.2
+2013-04-19 11:54:30 [org.quartz.core.QuartzScheduler]-[INFO] Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2013-04-19 11:54:30 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:54:30 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:54:30 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:54:30 CST 2013
+2013-04-19 11:54:30 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/bin/stop.bat
+2013-04-19 11:54:40 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:54:40 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:54:40 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:54:40 CST 2013
+2013-04-19 11:54:40 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/bin/stop.bat
+2013-04-19 11:54:40 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/bin/start.bat
+2013-04-19 11:54:50 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:54:50 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:54:50 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:54:50 CST 2013
+2013-04-19 11:54:50 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/bin/start.bat
+2013-04-19 11:54:50 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/bin/stop.bat
+2013-04-19 11:55:00 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:55:00 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:55:00 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:55:00 CST 2013
+2013-04-19 11:55:00 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/bin/stop.bat
+2013-04-19 11:55:00 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/bin/start.bat
+2013-04-19 11:55:32 [org.quartz.simpl.SimpleThreadPool]-[INFO] Job execution threads will use class loader of thread: main
+2013-04-19 11:55:32 [org.quartz.core.QuartzScheduler]-[INFO] Quartz Scheduler v.1.5.2 created.
+2013-04-19 11:55:32 [org.quartz.simpl.RAMJobStore]-[INFO] RAMJobStore initialized.
+2013-04-19 11:55:32 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2013-04-19 11:55:32 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler version: 1.5.2
+2013-04-19 11:55:32 [org.quartz.core.QuartzScheduler]-[INFO] Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2013-04-19 11:55:40 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:55:40 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:55:40 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:55:40 CST 2013
+2013-04-19 11:55:40 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/bin/stop.bat
+2013-04-19 11:55:50 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:55:50 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:55:50 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:55:50 CST 2013
+2013-04-19 11:55:50 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/bin/stop.bat
+2013-04-19 11:56:57 [org.quartz.simpl.SimpleThreadPool]-[INFO] Job execution threads will use class loader of thread: main
+2013-04-19 11:56:57 [org.quartz.core.QuartzScheduler]-[INFO] Quartz Scheduler v.1.5.2 created.
+2013-04-19 11:56:57 [org.quartz.simpl.RAMJobStore]-[INFO] RAMJobStore initialized.
+2013-04-19 11:56:57 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2013-04-19 11:56:57 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler version: 1.5.2
+2013-04-19 11:56:57 [org.quartz.core.QuartzScheduler]-[INFO] Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2013-04-19 11:57:00 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:57:00 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:57:00 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:57:00 CST 2013
+2013-04-19 11:57:00 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/bin/start.bat
+2013-04-19 11:57:16 [org.quartz.simpl.SimpleThreadPool]-[INFO] Job execution threads will use class loader of thread: main
+2013-04-19 11:57:16 [org.quartz.core.QuartzScheduler]-[INFO] Quartz Scheduler v.1.5.2 created.
+2013-04-19 11:57:16 [org.quartz.simpl.RAMJobStore]-[INFO] RAMJobStore initialized.
+2013-04-19 11:57:16 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2013-04-19 11:57:16 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler version: 1.5.2
+2013-04-19 11:57:16 [org.quartz.core.QuartzScheduler]-[INFO] Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2013-04-19 11:57:20 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:57:20 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:57:20 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:57:20 CST 2013
+2013-04-19 11:57:20 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/bin/stop.bat
+2013-04-19 11:58:20 [org.quartz.simpl.SimpleThreadPool]-[INFO] Job execution threads will use class loader of thread: main
+2013-04-19 11:58:20 [org.quartz.core.QuartzScheduler]-[INFO] Quartz Scheduler v.1.5.2 created.
+2013-04-19 11:58:20 [org.quartz.simpl.RAMJobStore]-[INFO] RAMJobStore initialized.
+2013-04-19 11:58:20 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler 'DefaultQuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2013-04-19 11:58:20 [org.quartz.impl.StdSchedulerFactory]-[INFO] Quartz scheduler version: 1.5.2
+2013-04-19 11:58:20 [org.quartz.core.QuartzScheduler]-[INFO] Scheduler DefaultQuartzScheduler_$_NON_CLUSTERED started.
+2013-04-19 11:58:20 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:58:20 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:58:20 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:58:20 CST 2013
+2013-04-19 11:58:20 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/bin/stop.bat
+2013-04-19 11:58:30 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:58:30 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:58:30 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:58:30 CST 2013
+2013-04-19 11:58:30 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/bin/stop.bat
+2013-04-19 11:58:40 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:58:40 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:58:40 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:58:40 CST 2013
+2013-04-19 11:58:40 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/bin/stop.bat
+2013-04-19 11:58:50 [org.quartz.simpl.SimpleJobFactory]-[DEBUG] Producing instance of Job 'jgroup1.job1', class=restart.RestartJob
+2013-04-19 11:58:50 [org.quartz.core.JobRunShell]-[DEBUG] Calling execute on job jgroup1.job1
+2013-04-19 11:58:50 [restart.RestartJob]-[INFO] Hello World! - Fri Apr 19 11:58:50 CST 2013
+2013-04-19 11:58:50 [restart.RestartJob]-[DEBUG] /D:/work_tests/restart/target/classes/bin/stop.bat
