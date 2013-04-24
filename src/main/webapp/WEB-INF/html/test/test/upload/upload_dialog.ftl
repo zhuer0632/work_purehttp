@@ -14,19 +14,24 @@
           rel="alternate stylesheet">
     <link media="screen" title="styles4" href="http://phpcms.com/statics/css/style/zh-cn-styles4.css" type="text/css"
           rel="alternate stylesheet">
-    <script src="http://phpcms.com/statics/js/jquery.min.js" type="text/javascript" language="javascript"></script>
+    <script src="/statics/js/jquery-1.8.3.min.js" type="text/javascript" language="javascript"></script>
     <script src="http://phpcms.com/statics/js/admin_common.js" type="text/javascript" language="javascript"></script>
     <script src="http://phpcms.com/statics/js/styleswitch.js" type="text/javascript" language="javascript"></script>
     <script charset="UTF-8" src="http://phpcms.com/statics/js/formvalidator.js" type="text/javascript"
             language="javascript"></script>
     <script charset="UTF-8" src="http://phpcms.com/statics/js/formvalidatorregex.js" type="text/javascript"
             language="javascript"></script>
+    <script src="/statics/js/jquery-1.8.3.min.js" type="text/javascript" language="javascript"></script>
+    <script src="http://phpcms.com/statics/js/styleswitch.js" type="text/javascript" language="javascript"></script>
+    <script src="/statics/js/art/jquery.artDialog.js?skin=blue" type="text/javascript" language="javascript"></script>
+    <script src="/statics/js/art/plugins/iframeTools.js" type="text/javascript" language="javascript"></script>
+
     <style type="text/css">
         html {
             _overflow-y: scroll
         }
     </style>
-    <link type="text/css" rel="stylesheet" href="http://phpcms.com/statics/js/swfupload/swfupload.css">
+    <link type="text/css" rel="stylesheet" href="/statics/js/swfupload/swfupload.css">
     <script src="/statics/js/swfupload/swfupload.js" type="text/javascript" language="JavaScript"></script>
     <script src="/statics/js/swfupload/fileprogress.js" type="text/javascript" language="JavaScript"></script>
     <script src="/statics/js/swfupload/handlers.js" type="text/javascript" language="JavaScript"></script>

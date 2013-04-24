@@ -39,7 +39,7 @@ public class file
     {
         //取得文件名
 
-        String filename = StringUT.ISO88591_UTF8(infile.getOriginalFilename());
+        String filename = StringUT.ISO_UTF8(infile.getOriginalFilename());
 
         //文件后缀
         String suffix = filename.substring(filename.lastIndexOf('.') + 1, filename.length());
