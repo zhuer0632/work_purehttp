@@ -7,7 +7,7 @@
     <title>视频云 - 后台管理中心</title>
     <link href="http://phpcms.com/statics/css/reset.css" rel="stylesheet" type="text/css" />
     <link href="http://phpcms.com/statics/css/zh-cn-system.css" rel="stylesheet" type="text/css" />
-    <link href="/statics/css/dialog.css" rel="stylesheet" type="text/css" />
+    <link href="http://phpcms.com/statics/css/dialog.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" type="text/css" href="http://phpcms.com/statics/css/style/zh-cn-styles1.css" title="styles1" media="screen" />
     <link rel="alternate stylesheet" type="text/css" href="http://phpcms.com/statics/css/style/zh-cn-styles2.css" title="styles2" media="screen" />
     <link rel="alternate stylesheet" type="text/css" href="http://phpcms.com/statics/css/style/zh-cn-styles3.css" title="styles3" media="screen" />

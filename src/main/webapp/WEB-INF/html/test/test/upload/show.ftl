@@ -51,6 +51,7 @@
                         fixed:true
                     });
         }
+
     </script>
 </head>
 <body>
@@ -61,6 +62,7 @@
 <div>
 
     <a onclick="flashupload('content','上传附件');return false;" href="javascript:void(0);">附件上传</a>
+
 
 </div>
 
