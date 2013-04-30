@@ -153,7 +153,7 @@ a.progressCancel:hover
 
 #btupload, .addnew
 {
-    background: url(/statics/img/swfBnt.png) no-repeat;
+    background: url(/statics/images/swfBnt.png) no-repeat;
     float: left;
     margin-right: 10px;
     width: 75px;
@@ -258,7 +258,7 @@ a.progressCancel:hover
 
 .attachment-list .img-wrap a.on .icon
 {
-    background: url(/statics/img/msg_bg.png) no-repeat left -249px;
+    background: url(/statics/images/msg_bg.png) no-repeat left -249px;
     width: 16px;
     height: 18px;
     bottom: 4px;
@@ -329,7 +329,7 @@ a.progressCancel:hover
 
 .video-list .img-wrap a.on .icon
 {
-    background: url(/statics/img/msg_bg.png) no-repeat left -249px;
+    background: url(/statics/images/msg_bg.png) no-repeat left -249px;
     width: 16px;
     height: 18px;
     bottom: 4px;

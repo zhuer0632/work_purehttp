@@ -19,7 +19,7 @@ function att_show(serverData, file)
     } else
     {
         ext="do";
-        var img = '<a href="javascript:;" onclick="javascript:att_cancel(this,\'' + id + '\',\'upload\')" class="on"><div class="icon"></div><img src="/statics/img/ext/' + ext + '.png" width="80" imgid="' + id + '" path="' + src + '" title="' + filename + '"/></a>';
+        var img = '<a href="javascript:;" onclick="javascript:att_cancel(this,\'' + id + '\',\'upload\')" class="on"><div class="icon"></div><img src="/statics/images/ext/' + ext + '.png" width="80" imgid="' + id + '" path="' + src + '" title="' + filename + '"/></a>';
     }
 
 //不知道这个是干什么的?

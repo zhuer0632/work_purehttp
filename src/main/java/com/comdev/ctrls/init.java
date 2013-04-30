@@ -55,10 +55,10 @@ public class init
         return "<h3 class=\"f14\"><span class=\"switchs cu on\" title=\"展开与收缩\"></span>Meta</h3>\n" +
                 "\n" +
                 "<ul>\n" +
-                "<li id=\"_MP11\" class=\"sub_menu\"><a href=\"javascript:_MP(11,'test/test/test/show');\" hidefocus=\"true\" style=\"outline:none;\">创建表</a></li>\n" +
-                "<li id=\"_MP12\" class=\"sub_menu\"><a href=\"javascript:_MP(12,'test/test/upload/show');\" hidefocus=\"true\" style=\"outline:none;\">表结构</a></li>\n" +
-                "<li id=\"_MP13\" class=\"sub_menu\"><a href=\"javascript:_MP(13,'content/content/main');\" hidefocus=\"true\" style=\"outline:none;\">健康检查</a></li>\n" +
-                "<li id=\"_MP14\" class=\"sub_menu\"><a href=\"javascript:_MP(14,'content/content/main');\" hidefocus=\"true\" style=\"outline:none;\">下载Class</a></li>\n" +
+                "<li id=\"_MP11\" class=\"sub_menu\"><a href=\"javascript:_MP(11,'test/test/test/show');\" hidefocus=\"true\" style=\"outline:none;\">测试1-分页</a></li>\n" +
+                "<li id=\"_MP12\" class=\"sub_menu\"><a href=\"javascript:_MP(12,'test/test/upload/show');\" hidefocus=\"true\" style=\"outline:none;\">测试2-上传</a></li>\n" +
+                "<li id=\"_MP13\" class=\"sub_menu\"><a href=\"javascript:_MP(13,'test/test/curd/show');\" hidefocus=\"true\" style=\"outline:none;\">测试3-增删改查</a></li>\n" +
+                "<li id=\"_MP14\" class=\"sub_menu\"><a href=\"javascript:_MP(14,'content/content/main');\" hidefocus=\"true\" style=\"outline:none;\">测试4-对话框</a></li>\n" +
                 "</ul>\n" +
                 "\n" +
                 "\n" +

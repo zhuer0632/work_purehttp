@@ -7,6 +7,7 @@ import com.comdev.vos.VOFile;
 import com.me.ut.date.DatetimeUT;
 import com.me.ut.string.StringUT;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -59,8 +60,7 @@ public class file
         try
         {
             infile.transferTo(new File(filepath + File.separator + savefilename));
-        }
-        catch (IOException e)
+        } catch (IOException e)
         {
             e.printStackTrace();
         }
@@ -82,13 +82,13 @@ public class file
             img = true;
         }
 
-        return vo.getObjid_() + "," + "/file/down/?id=" + vo.getObjid_() + "" + "," + vo.getSuffix_() + "," + vo.getFilename_() + "," + img;//json data
+        return vo.getObjid_() + "," + "/file/down/" + vo.getObjid_() + "" + "," + vo.getSuffix_() + "," + vo.getFilename_() + "," + img;//json data
 
     }
 
 
-    @RequestMapping("down")
-    public void down(@RequestParam("id") String fileid, HttpServletRequest request,
+    @RequestMapping("down/{id}")
+    public void down(@PathVariable("id") String fileid, HttpServletRequest request,
                      HttpServletResponse response)
     {
 
@@ -121,10 +121,12 @@ public class file
                         "UTF-8").replace("+",
                         "%20");
                 head = "attachment; filename=" + fileName;
-            } else if (StringUT.isChrome(request))
+            }
+            else if (StringUT.isChrome(request))
             {
                 head = "attachment; filename=" + fileName;
-            } else if (StringUT.isFirefox(request))
+            }
+            else if (StringUT.isFirefox(request))
             {
                 head = "attachment;filename=\"" + fileName + "\"";
             }
@@ -135,7 +137,8 @@ public class file
                 if (vo.getSuffix_().equals("jpg"))
                 {
                     response.setContentType("image/jpeg");
-                } else
+                }
+                else
                 {
                     response.setContentType("image/" + vo.getSuffix_() + "");
                 }
@@ -161,31 +164,31 @@ public class file
                         0,
                         bytesRead);
             }
-        }
-        catch (Exception e)
+        } catch (Exception e)
         {
             e.printStackTrace();
-        }
-        finally
+        } finally
         {
             if (bis != null)
+            {
                 try
                 {
                     bis.close();
-                }
-                catch (IOException e)
+                } catch (IOException e)
                 {
                     e.printStackTrace();
                 }
+            }
             if (bos != null)
+            {
                 try
                 {
                     bos.close();
-                }
-                catch (IOException e)
+                } catch (IOException e)
                 {
                     e.printStackTrace();
                 }
+            }
         }
 
     }
