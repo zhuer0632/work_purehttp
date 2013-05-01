@@ -167,31 +167,33 @@
             </table>
         </form>
     </div>
-    <form method="post" action="" id="myform" name="myform">
+    <form method="post" action="/" id="myform" name="myform">
         <div class="table-list">
             <table width="100%">
                 <thead>
                 <tr>
-                    <th width="16"><input type="checkbox" onclick="selectall('ids[]');" id="check_box" value=""></th>
-                    <th width="37">排序</th>
-                    <th width="40">ID</th>
+                    <th width="5%"><input type="checkbox" onclick="selectall('objid_');" id="check_box" value=""></th>
+                    <th width="5%">排序</th>
+                    <th width="5%">ID</th>
                     <th>标题</th>
-                    <th width="40">点击量</th>
-                    <th width="70">发布人</th>
-                    <th width="118">更新时间</th>
-                    <th width="72">管理操作</th>
+                    <th width="5%">点击量</th>
+                    <th width="5%">发布人</th>
+                    <th width="15%">更新时间</th>
+                    <th width="10%">管理操作</th>
                 </tr>
                 </thead>
                 <tbody id="tb">
-                  <#--如果没有一行tr，那么tbody是不存在的，下面的js无法运行-->
-                 <tr class="hidden"><td colspan="8"></td></tr>
+                <#--如果没有一行tr，那么tbody是不存在的，下面的js无法运行-->
+                <tr class="hidden">
+                    <td colspan="8"></td>
+                </tr>
 
                 </tbody>
             </table>
             <div class="btn"><label for="check_box">全选/取消</label>
                 <input type="hidden" name="pc_hash" value="ku0ktr">
                 <input type="button" onclick="myform.action='?m=content&amp;c=content&amp;a=listorder&amp;dosubmit=1&amp;catid=8&amp;steps=0';myform.submit();" value="排序" class="button">
-                <input type="button" onclick="myform.action='?m=content&amp;c=content&amp;a=delete&amp;dosubmit=1&amp;catid=8&amp;steps=0';return confirm_delete()" value="删除" class="button">
+                <input type="button" onclick="myform.action='/test/test/curd/do_delete';return confirm_delete()" value="删除" class="button">
                 <input type="button" onclick="push();" value="推送" class="button">
                 <input type="button" onclick="myform.action='?m=content&amp;c=content&amp;a=remove&amp;catid=8';myform.submit();" value="批量移动" class="button">
             </div>
@@ -204,60 +206,38 @@
 
     $(function ()
     {
-        //没有参数的
-        $.get("/test/test/curd/list", function (data)
-        {
-            $(data['data']).each(function (index, em)
-            {
+        //没有参数的;查询指定页数据
+        page(1);
 
-                var tr="<tr>\n" +
-                        "                    <td align=\"center\"><input type=\"checkbox\" class=\"inputcheckbox \" name=\"ids[]\" value=\"2\"></td>\n" +
+    });
+
+    function page(pageno)
+    {
+        $.get("/test/test/curd/list/?pageno="+pageno+"&etag="+time(), function (data)
+        {
+            clearTableTr($("#tb"));
+            $(data['datas']).each(function (index, em)
+            {
+                var tr = "<tr>\n" +
+                        "                    <td align=\"center\"><input type=\"checkbox\" class=\"inputcheckbox \" name=\"objid_\" value=\"" + em['objid_'] + "\"></td>\n" +
                         "                    <td align=\"center\"><input type=\"text\" name=\"listorders[2]\" size=\"3\" value=\"0\" class=\"input-text-c input-text\"></td>\n" +
-                        "                    <td align=\"center\">"+(index+1)+"</td>\n" +
+                        "                    <td align=\"center\">" + (index + 1) + "</td>\n" +
                         "                    <td>\n" +
-                        "                        <a href=\"/\" target=\"_blank\"><span style=\"\">"+em['title_']+"</span></a></td>\n" +
+                        "                        <a href=\"/\" target=\"_blank\"><span style=\"\">" + em['title_'] + "</span></a></td>\n" +
                         "                    <td align=\"center\" >0</td>\n" +
                         "                    <td align=\"center\">\n" +
                         "                        admin\n" +
                         "                    </td>\n" +
                         "                    <td align=\"center\">2013-04-30 19:12:05</td>\n" +
-                        "                    <td align=\"center\"><a href=\"javascript:;\" onclick=\"javascript:openwinx('/test/test/curd/show_edit/?objid_="+em['objid_']+"','')\">修改</a> | <a href=\"javascript:void(0)\">评论</a></td>\n" +
+                        "                    <td align=\"center\"><a href=\"javascript:;\" onclick=\"javascript:openwinx('/test/test/curd/show_edit/?objid_=" + em['objid_'] + "','')\">修改</a> | <a href=\"javascript:void(0)\">评论</a></td>\n" +
                         "</tr>";
                 bindTrInTable($("#tb"), tr);
             });
-        });
-    });
-
-    function push()
-    {
-        var str = 0;
-        var id = tag = '';
-        $("input[name='ids[]']").each(function ()
-        {
-            if ($(this).attr('checked') == 'checked')
-            {
-                str = 1;
-                id += tag + $(this).val();
-                tag = '|';
-            }
-        });
-        if (str == 0)
-        {
-            alert('您没有勾选信息');
-            return false;
-        }
-        window.top.art.dialog({id: 'push'}).close();
-        window.top.art.dialog({title: '推送：', id: 'push', iframe: '?m=content&amp;c=push&amp;action=position_list&amp;catid=8&amp;modelid=3&amp;id=' + id, width: '800', height: '500'}, function ()
-        {
-            var d = window.top.art.dialog({id: 'push'}).data.iframe;// 使用内置接口获取iframe对象
-            var form = d.document.getElementById('dosubmit');
-            form.click();
-            return false;
-        }, function ()
-        {
-            window.top.art.dialog({id: 'push'}).close()
+            //设置分页
+            $("#pages").html(data['pages']);
         });
     }
+
     function confirm_delete()
     {
         if (confirm('确认删除吗？'))
@@ -278,7 +258,7 @@
         if (type == 1)
         {
             var str = 0;
-            $("input[name='ids[]']").each(function ()
+            $("input[name='objid_']").each(function ()
             {
                 if ($(this).attr('checked') == 'checked')
                 {
@@ -305,7 +285,7 @@
         var refersh_time = getcookie('refersh_time');
         if (refersh_time == 1)
         {
-            window.location.reload();
+            redirect("/test/test/curd/show/?etag="+time());
         }
     }
     setInterval("refersh_window()", 3000);

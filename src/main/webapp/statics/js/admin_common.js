@@ -50,3 +50,11 @@ function omnipotent(id,linkurl,title,close_type,w,h) {
 			art.dialog({id:id}).close()
 	});void(0);
 }
+
+function  time()
+{
+    var d=new Date();
+    return d.getTime();
+}
+
+

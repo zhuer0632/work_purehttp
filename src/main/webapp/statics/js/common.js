@@ -29,10 +29,18 @@ function bindTrInTable(tbObj, trStr)
 }
 
 // 清空表格中的所有行
-//function clearTableTr(tbObj)
-//{
-//    $(tbObj).find("tr").remove();
-//}
+function clearTableTr(tbObj)
+{
+
+    $(tbObj).find("tr").each(function(index,e)
+    {
+        if(index>0)
+        {
+                $(e).remove();
+        }
+    });
+
+}
 
 // 判断字符串中是否含有某个字串
 function hasStr(strSrc, subStr)

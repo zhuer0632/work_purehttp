@@ -1,11 +1,16 @@
 package com.comdev.ctrls.test.test;
 
+import com.comdev.common.Page;
 import com.comdev.consts.SysConst;
 import com.comdev.db.DbKit;
 import com.comdev.vos.VONews;
 import com.me.ut.string.StringUT;
 import org.nutz.dao.Chain;
 import org.nutz.dao.Cnd;
+import org.nutz.dao.pager.Pager;
+import org.nutz.dao.sql.Criteria;
+import org.nutz.lang.Lang;
+import org.nutz.lang.random.StringGenerator;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,10 +40,20 @@ public class curd
 
     @RequestMapping("list")
     @ResponseBody
-    public Map list()
+    public Map list(@RequestParam("pageno") int pageno)
     {
         Map out = new HashMap();
-        out.put("data", DbKit.getDao().query(VONews.class, null));
+
+        int allcount=DbKit.getDao().count(VONews.class);
+
+
+        Pager pager=new Pager();
+        pager.setPageNumber(pageno);
+        pager.setPageSize(1);//1
+        out.put("datas", DbKit.getDao().query(VONews.class, null,pager));
+
+        //%s是页码
+        out.put("pages", Page.pages(allcount,pageno,"javascript:page(%s);"));
         return out;
     }
 
@@ -77,6 +92,18 @@ public class curd
             DbKit.getDao().update(VONews.class, Chain.make("title_", title).add("content_", content), Cnd.where("objid_", "=", objid));
         }
         return "";
+    }
+
+
+    @RequestMapping("do_delete")
+    public String do_delete(@RequestParam("objid_") String[] objid_)
+    {
+        Criteria cri = Cnd.cri();
+        cri.where().andIn("objid_", objid_);
+
+        DbKit.getDao().clear(VONews.class, cri);
+
+        return "/test/test/curd/show";
     }
 
     @RequestMapping("showmessage")
