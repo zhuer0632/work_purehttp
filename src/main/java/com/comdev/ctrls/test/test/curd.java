@@ -1,7 +1,9 @@
 package com.comdev.ctrls.test.test;
 
+import com.comdev.consts.SysConst;
 import com.comdev.db.DbKit;
 import com.comdev.vos.VONews;
+import com.me.ut.string.StringUT;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,10 +37,23 @@ public class curd
     //执行添加命令
     @RequestMapping("do_add")
     @ResponseBody
-    public String do_add(@RequestParam("info[title]") String title, @RequestParam("info[content]") String content)
+    public String do_add(@RequestParam("title") String title, @RequestParam("content") String content)
     {
         DbKit.getDao().insert(VONews.me(title, content));
         return "";
+    }
+
+    @RequestMapping("showmessage")
+    public ModelAndView showmessage(@RequestParam("type") String type, @RequestParam("data") String data, @RequestParam("href") String href)
+    {
+        ModelAndView mod = new ModelAndView();
+
+        mod.addObject("type", type);
+        mod.addObject("data", StringUT.Base64_decode(data.replace("-", "+").replace("_", "/"), "UTF-8"));
+        mod.addObject("href", StringUT.Base64_decode(href.replace("-", "+").replace("_", "/"),"UTF-8"));
+        mod.setViewName("/test/test/curd/showmessage");
+
+        return mod;
     }
 
 

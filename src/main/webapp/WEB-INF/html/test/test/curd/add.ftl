@@ -15,6 +15,8 @@
     <link rel="alternate stylesheet" type="text/css" href="http://phpcms.com/statics/css/style/zh-cn-styles4.css" title="styles4" media="screen"/>
     <script language="javascript" type="text/javascript" src="/statics/js/jquery-1.8.3.min.js"></script>
     <script language="javascript" type="text/javascript" src="/statics/js/admin_common.js"></script>
+    <script language="javascript" type="text/javascript" src="/statics/js/common.js"></script>
+    <script language="javascript" type="text/javascript" src="/statics/js/commons/Base64.js"></script>
     <script language="javascript" type="text/javascript" src="http://phpcms.com/statics/js/styleswitch.js"></script>
     <script language="javascript" type="text/javascript" src="http://phpcms.com/statics/js/formvalidator.js" charset="UTF-8"></script>
     <script language="javascript" type="text/javascript" src="http://phpcms.com/statics/js/formvalidatorregex.js" charset="UTF-8"></script>
@@ -119,7 +121,7 @@
                         <tr>
                             <th width="80"><font color="red">*</font> 标题</th>
                             <td>
-                                <input type="text" style="width:400px;" name="info[title]" id="title" value="" style="color:" class="measure-input " onBlur="$.post('api.php?op=get_keywords&number=3&sid='+Math.random()*5, {data:$('#title').val()}, function(data){if(data && $('#keywords').val()=='') {$('#keywords').val(data);
+                                <input type="text" style="width:400px;" name="info.title" id="title" value="" style="color:" class="measure-input " onBlur="$.post('api.php?op=get_keywords&number=3&sid='+Math.random()*5, {data:$('#title').val()}, function(data){if(data && $('#keywords').val()=='') {$('#keywords').val(data);
 } })" onkeyup="strlen_verify(this, 'title_len', 80);"/><input type="hidden" name="style_color" id="style_color" value="">
                                 <input type="hidden" name="style_font_weight" id="style_font_weight" value=""><input type="button" class="button" id="check_title_alt" value="检测重复" onclick="$.get('?m=content&c=content&a=public_check_title&catid=6&sid='+Math.random()*5, {data:$('#title').val()}, function(data){if(data=='1') {$('#check_title_alt').val('标题重复');$('#check_title_alt').css('background-color','#FFCC66');} else if(data=='0') {$('#check_title_alt').val('标题不重复');$('#check_title_alt').css('background-color','#F8FFE1')}})" style="width:73px;"/><img src="http://phpcms.com/statics/images/icon/colour.png" width="15" height="16" onclick="colorpicker('title_colorpanel','set_title_color');" style="cursor:hand"/>
                                 <img src="http://phpcms.com/statics/images/icon/bold.png" width="10" height="10" onclick="input_font_bold()" style="cursor:hand"/> <span id="title_colorpanel" style="position:absolute;" class="colorpanel"></span>还可输入<B><span id="title_len">80</span></B> 个字符
@@ -130,7 +132,7 @@
                             <th width="80"><font color="red">*</font> 内容</th>
                             <td>
                                 <div id='content_tip'></div>
-                                <textarea name="info[content]" id="content" boxid="content"></textarea>
+                                <textarea name="info.content" id="content" boxid="content"></textarea>
                                 <script type="text/javascript" src="http://phpcms.com/statics/js/ckeditor/ckeditor.js"></script>
                                 <script type="text/javascript">
                                     CKEDITOR.replace('content', {height: 300, pages: true, subtitle: true, textareaid: 'content', module: 'content', catid: '6',
@@ -254,20 +256,36 @@
     self.moveTo(-4, -4);
     function refersh_window(type)
     {
+
 //        setcookie('refersh_time', 1);
 
+//        $.post("/test/test/curd/do_add", { name: "John", time: "2pm" },
+//                function(data){
+//                    alert("Data Loaded: " + data);
+//                });
 
-        $.post("/test/test/curd/do_add","{info[title]:"+$("#title").val()+",info[content]:"+$("#content").val()+"}",function(data)
+
+        $.post("/test/test/curd/do_add", {title:"aaa" ,content: "bbbb" }, function (data)
         {
-                //执行成功后
+            //执行成功后
             if (type == "dosubmit")//保存后自动关闭
             {
-                      redirect("/test/test/curd/showmessage/?type=close");
+                var base64=new Base64();
+                var data = ReplaceBase64(base64.encode("保存成功"));//msg,type,href
+                var href = base64.encode("");//msg,type,href
+                var args = "type=close&data=" + data + "&href=" + href + "";
+                redirect("/test/test/curd/showmessage/?" + args);
             }
+
             //保存后继续
             else
             {
-                redirect("/test/test/curd/showmessage/?type=continue");
+                var base64=new Base64();
+                var data = ReplaceBase64(base64.encode("保存成功"));//msg,type,href
+                var href = ReplaceBase64(base64.encode("/test/test/curd/show_add"));//msg,type,href
+                var args = "type=continue&data=" + data + "&href=" + href + "";
+                redirect("/test/test/curd/showmessage/?" + args);
+
             }
 
         });

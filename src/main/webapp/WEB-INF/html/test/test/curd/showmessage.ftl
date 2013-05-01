@@ -1,11 +1,9 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=<?php echo CHARSET;?>"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=7"/>
-    <title></title>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="IE=7" http-equiv="X-UA-Compatible">
+    <title>提示信息</title>
     <style type="text/css">
-        <!--
         *
         {
             padding: 0;
@@ -39,7 +37,7 @@
 
         .showMsg h5
         {
-            background-image: url(<?php echo IMG_PATH?>msg_img/msg.png );
+            background-image: url(http://phpcms.com/statics/images/msg_img/msg.png);
             background-repeat: no-repeat;
             color: #fff;
             padding-left: 35px;
@@ -71,55 +69,59 @@
 
         .showMsg .ok, .showMsg .guery
         {
-            background: url(<?php echo IMG_PATH?>msg_img/msg_bg.png ) no-repeat 0 px - 560 px;
+            background: url(http://phpcms.com/statics/images/msg_img/msg_bg.png) no-repeat 0px -560px;
         }
 
         .showMsg .guery
         {
             background-position: left -460px;
         }
-
-        -->
     </style>
-    <script type="text/javaScript" src="/statics/js/jquery-1.8.3.min.js"></script>
-    <script language="JavaScript" src="/statics/js/admin_common.js"></script>
+    <script src="http://phpcms.com/statics/js/jquery.min.js" type="text/javaScript"></script>
+    <script src="http://phpcms.com/statics/js/admin_common.js" language="JavaScript"></script>
 </head>
 <body>
-<div class="showMsg" style="text-align:center">
+<div style="text-align:center" class="showMsg">
     <h5>提示信息</h5>
 
-    <div class="content guery" style="display:inline-block;display:-moz-inline-stack;zoom:1;*display:inline;max-width:330px"><?php echo $msg?></div>
-    <div class="bottom">
-        <?php if($url_forward=='goback' || $url_forward=='') {?>
-        <a href="javascript:history.back();">[<?php echo L('return_previous');?>]</a>
-        <?php } elseif($url_forward=="close") {?>
-        <input type="button" name="close" value="<?php echo L('close');?> " onClick="window.close();">
-        <?php } elseif($url_forward=="blank") {?>
+    <div style="display:inline-block;display:-moz-inline-stack;zoom:1;*display:inline;max-width:330px" class="content guery">
+    ${data}
+    <font color="red"><b><span id="secondid">2</span></b> 秒后自动
+    <#if type=="close">
+     关闭
+     </#if>
+    <#if type=="continue">
+     跳转
+    </#if>
+    </font>
+    <script>function set_time() {$("#secondid").html(1);}setTimeout("set_time()", 500);</script>
 
-        <?php } elseif($url_forward)
-        {
-		if(strpos($url_forward,'&pc_hash')===false) $url_forward .= '&pc_hash='.$_SESSION['pc_hash'];
-        ?>
-
-        <#--<a href="<?php echo $url_forward?>"><?php echo L('click_here');?></a>-->
-        <script language="javascript">setTimeout("redirect('url');", 2;</script>
-        <?php }?>
-        <?php if($returnjs) { ?>
-        <script style="text/javascript"><?php echo $returnjs;?></script>
-        <?php } ?>
-        <?php if ($dialog):?>
-        <script style="text/javascript">window.top.right.location.reload();
-        window.top.art.dialog({id: "<?php echo $dialog?>"}).close();</script>
-        <?php endif;?>
     </div>
-</div>
-<script style="text/javascript">
-    function close_dialog()
-    {
-        window.top.right.location.reload();
-        window.top.art.dialog({id: "<?php echo $dialog?>"}).close();
-    }
-</script>
+    <div class="bottom">
+
+
+    <#if  type=="continue">
+    <#--跳转到指定页面-->
+    <a href="${href}">如果您的浏览器没有自动跳转，请点击这里</a>
+   <script language="javascript">setTimeout("redirect('${href}');",2000);</script>
+    </#if>
+
+    <#if  type=="close">
+    <#--关闭页面-->
+        <a href="javascript:window.close();">如果您的浏览器没有自动关闭，请点击这里</a>
+        <script style="text/javascript">setTimeout("window.close()", 1200);</script>
+    </#if>
+
+    </div>
+
+    <script style="text/javascript">
+        function close_dialog()
+        {
+            window.top.right.location.reload();
+            window.top.art.dialog({id: ""}).close();
+        }
+    </script>
+
 
 </body>
 </html>
