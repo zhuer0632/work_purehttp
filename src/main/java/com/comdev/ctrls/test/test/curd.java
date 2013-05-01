@@ -48,8 +48,7 @@ public class curd
 
         Pager pager = new Pager();
         pager.setPageNumber(pageno);
-        Pager.DEFAULT_PAGE_SIZE = 5;//1
-
+        pager.setPageSize(5 );
 
         String in = StringUT.Base64_decode_url(args);
         String[] in_arr = in.split("\\{&\\}");
@@ -65,12 +64,14 @@ public class curd
             }
             cri.where().andLike(temp_arr[0], temp_arr[1]);
         }
+        cri.desc("modifyDate_");
 
         int allcount = DbKit.getDao().count(VONews.class,cri);
 
         out.put("datas", DbKit.getDao().query(VONews.class, cri, pager));
 
         //%s是页码
+        Pager.DEFAULT_PAGE_SIZE=pager.getPageSize();//把pagesize放在公共变量里
         out.put("pages", Page.pages(allcount, pageno, "javascript:page(%s,'" + args + "');"));
         return out;
 

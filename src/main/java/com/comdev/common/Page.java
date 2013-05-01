@@ -27,7 +27,7 @@ public class Page
      */
     public static String pages(int allCount, int curr_page, String pageurl)
     {
-        
+
         //总页数
         int pagenums  =  allCount % Pager.DEFAULT_PAGE_SIZE == 0 ? allCount / Pager.DEFAULT_PAGE_SIZE : allCount/ Pager.DEFAULT_PAGE_SIZE + 1;
 

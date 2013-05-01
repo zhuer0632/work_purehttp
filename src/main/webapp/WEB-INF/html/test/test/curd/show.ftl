@@ -110,11 +110,11 @@
                 <tr>
                     <td>
                         <div class="explain-col">
-                             标题：
+                            标题：
                             <input type="text" class="input-text" value="" name="args_title" id="args_title">
                             内容：
-                            <input type="text" class="input-text" value="" name="args_content" id="args_content" >
-                            <input type="button"  onclick="javascript:page(1)"  value="搜索" class="button" name="search" id="search">
+                            <input type="text" class="input-text" value="" name="args_content" id="args_content">
+                            <input type="button" onclick="javascript:page(1)" value="搜索" class="button" name="search" id="search">
                         </div>
                     </td>
                 </tr>
@@ -166,13 +166,13 @@
 
     });
 
-    function page(pageno,args)
+    function page(pageno, args)
     {
-        var base64=new Base64();
+        var base64 = new Base64();
         //多个参数需要用 {&}分开，key和value用{=}连接
 
-        var args=ReplaceBase64(base64.encode("title_{=}"+$("#args_title").val()+"{&}content_{=}"+$("#args_content").val()+""));
-        $.get("/test/test/curd/list/?pageno="+pageno+"&args="+args+"&etag="+time(), function (data)
+        var args = ReplaceBase64(base64.encode("title_{=}" + $("#args_title").val() + "{&}content_{=}" + $("#args_content").val() + ""));
+        $.get("/test/test/curd/list/?pageno=" + pageno + "&args=" + args + "&etag=" + time(), function (data)
         {
             clearTableTr($("#tb"));
             $(data['datas']).each(function (index, em)
@@ -187,7 +187,7 @@
                         "                    <td align=\"center\">\n" +
                         "                        admin\n" +
                         "                    </td>\n" +
-                        "                    <td align=\"center\">2013-04-30 19:12:05</td>\n" +
+                        "                    <td align=\"center\">" + getTimeString(em['modifyDate_']) + "</td>\n" +
                         "                    <td align=\"center\"><a href=\"javascript:;\" onclick=\"javascript:openwinx('/test/test/curd/show_edit/?objid_=" + em['objid_'] + "','')\">修改</a> | <a href=\"javascript:void(0)\">评论</a></td>\n" +
                         "</tr>";
                 bindTrInTable($("#tb"), tr);
@@ -244,7 +244,7 @@
         var refersh_time = getcookie('refersh_time');
         if (refersh_time == 1)
         {
-            redirect("/test/test/curd/show/?etag="+time());
+            redirect("/test/test/curd/show/?etag=" + time());
         }
     }
     setInterval("refersh_window()", 3000);
