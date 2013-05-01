@@ -48,7 +48,7 @@ public class curd
 
         Pager pager = new Pager();
         pager.setPageNumber(pageno);
-        Pager.DEFAULT_PAGE_SIZE = 1;//1
+        Pager.DEFAULT_PAGE_SIZE = 5;//1
 
 
         String in = StringUT.Base64_decode_url(args);

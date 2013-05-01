@@ -20,16 +20,18 @@ public class Page
      *
      * 返回的是分页部分的html内容
      *
-     * @param pagenums     分页后的总数量
+     * @param allCount     分页前的根据搜索条件得到的总数量
      * @param curr_page 要请求第几页的内容
      * @param pageurl url的通用地址[要携带可能有的查询参数]
      * @return
      */
-    public static String pages(int pagenums, int curr_page, String pageurl)
+    public static String pages(int allCount, int curr_page, String pageurl)
     {
-        pagenums=  pagenums % Pager.DEFAULT_PAGE_SIZE == 0 ? pagenums / Pager.DEFAULT_PAGE_SIZE : pagenums/ Pager.DEFAULT_PAGE_SIZE + 1;
+        
+        //总页数
+        int pagenums  =  allCount % Pager.DEFAULT_PAGE_SIZE == 0 ? allCount / Pager.DEFAULT_PAGE_SIZE : allCount/ Pager.DEFAULT_PAGE_SIZE + 1;
 
-        if(pagenums==1)
+        if(pagenums<=1)
         {
             return  "";
         }
