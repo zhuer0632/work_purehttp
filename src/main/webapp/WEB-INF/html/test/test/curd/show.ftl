@@ -15,6 +15,7 @@
     <link media="screen" title="styles4" href="http://phpcms.com/statics/css/style/zh-cn-styles4.css" type="text/css" rel="alternate stylesheet">
     <script src="http://phpcms.com/statics/js/jquery.min.js" type="text/javascript" language="javascript"></script>
     <script src="/statics/js/admin_common.js" type="text/javascript" language="javascript"></script>
+    <script src="/statics/js/common.js" type="text/javascript" language="javascript"></script>
     <script src="http://phpcms.com/statics/js/styleswitch.js" type="text/javascript" language="javascript"></script>
     <script type="text/javascript">
         window.focus();
@@ -81,12 +82,12 @@
 <div style="display:none" id="closeParentTime"></div>
 <script language="JavaScript">
     <#--注释掉显示树的部分-->
-//    if (window.top.$("#current_pos").data('clicknum') == 1 || window.top.$("#current_pos").data('clicknum') == null)
-//    {
-//        parent.document.getElementById('display_center_id').style.display = '';
-//        parent.document.getElementById('center_frame').src = '?m=content&amp;c=content&amp;a=public_categorys&amp;type=add&amp;menuid=822&amp;pc_hash=ku0ktr';
-//        window.top.$("#current_pos").data('clicknum', 0);
-//    }
+    //    if (window.top.$("#current_pos").data('clicknum') == 1 || window.top.$("#current_pos").data('clicknum') == null)
+    //    {
+    //        parent.document.getElementById('display_center_id').style.display = '';
+    //        parent.document.getElementById('center_frame').src = '?m=content&amp;c=content&amp;a=public_categorys&amp;type=add&amp;menuid=822&amp;pc_hash=ku0ktr';
+    //        window.top.$("#current_pos").data('clicknum', 0);
+    //    }
 </script>
 <div class="pad-10">
     <div class="content-menu ib-a blue line-x">
@@ -181,41 +182,10 @@
                     <th width="72">管理操作</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr>
-                    <td align="center"><input type="checkbox" value="2" name="ids[]" class="inputcheckbox "></td>
-                    <td align="center"><input type="text" class="input-text-c input-text" value="0" size="3" name="listorders[2]"></td>
-                    <td align="center">2</td>
-                    <td>
-                        <a target="_blank" href="http://phpcms.com/index.php?m=content&amp;c=index&amp;a=show&amp;catid=8&amp;id=2"><span style="">啊啊吧avav啊查询传销自残</span></a></td>
-                    <td align="center" title="今日点击：0
-昨日点击：
-本周点击：0
-本月点击：0">0
-                    </td>
-                    <td align="center">
-                        admin
-                    </td>
-                    <td align="center">2013-04-30 19:12:05</td>
-                    <td align="center"><a onclick="javascript:openwinx('?m=content&amp;c=content&amp;a=edit&amp;catid=8&amp;id=2','')" href="javascript:;">修改</a> | <a href="javascript:view_comment('content_8-2-1','啊啊吧avav啊查询传销自残')">评论</a></td>
-                </tr>
-                <tr>
-                    <td align="center"><input type="checkbox" value="1" name="ids[]" class="inputcheckbox "></td>
-                    <td align="center"><input type="text" class="input-text-c input-text" value="0" size="3" name="listorders[1]"></td>
-                    <td align="center">1</td>
-                    <td>
-                        <a target="_blank" href="http://phpcms.com/index.php?m=content&amp;c=index&amp;a=show&amp;catid=8&amp;id=1"><span style="">ddd</span></a> <img title="缩略图" src="http://phpcms.com/statics/images/icon/small_img.gif"></td>
-                    <td align="center" title="今日点击：1
-昨日点击：
-本周点击：1
-本月点击：2">2
-                    </td>
-                    <td align="center">
-                        admin
-                    </td>
-                    <td align="center">2013-04-21 01:17:53</td>
-                    <td align="center"><a onclick="javascript:openwinx('?m=content&amp;c=content&amp;a=edit&amp;catid=8&amp;id=1','')" href="javascript:;">修改</a> | <a href="javascript:view_comment('content_8-1-1','ddd')">评论</a></td>
-                </tr>
+                <tbody id="tb">
+                  <#--如果没有一行tr，那么tbody是不存在的，下面的js无法运行-->
+                 <tr class="hidden"><td colspan="8"></td></tr>
+
                 </tbody>
             </table>
             <div class="btn"><label for="check_box">全选/取消</label>
@@ -231,6 +201,33 @@
 </div>
 <script src="http://phpcms.com/statics/js/cookie.js" type="text/javascript" language="javascript"></script>
 <script type="text/javascript">
+
+    $(function ()
+    {
+        //没有参数的
+        $.get("/test/test/curd/list", function (data)
+        {
+            $(data['data']).each(function (index, em)
+            {
+
+                var tr="<tr>\n" +
+                        "                    <td align=\"center\"><input type=\"checkbox\" class=\"inputcheckbox \" name=\"ids[]\" value=\"2\"></td>\n" +
+                        "                    <td align=\"center\"><input type=\"text\" name=\"listorders[2]\" size=\"3\" value=\"0\" class=\"input-text-c input-text\"></td>\n" +
+                        "                    <td align=\"center\">"+(index+1)+"</td>\n" +
+                        "                    <td>\n" +
+                        "                        <a href=\"/\" target=\"_blank\"><span style=\"\">"+em['title_']+"</span></a></td>\n" +
+                        "                    <td align=\"center\" >0</td>\n" +
+                        "                    <td align=\"center\">\n" +
+                        "                        admin\n" +
+                        "                    </td>\n" +
+                        "                    <td align=\"center\">2013-04-30 19:12:05</td>\n" +
+                        "                    <td align=\"center\"><a href=\"javascript:;\" onclick=\"javascript:openwinx('/test/test/curd/show_edit/?objid_="+em['objid_']+"','')\">修改</a> | <a href=\"javascript:void(0)\">评论</a></td>\n" +
+                        "</tr>";
+                bindTrInTable($("#tb"), tr);
+            });
+        });
+    });
+
     function push()
     {
         var str = 0;

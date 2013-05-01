@@ -112,6 +112,11 @@
                 <div class="content pad-6">
                     <table width="100%" cellspacing="0" class="table_form">
                         <tbody>
+                        <tr class="hidden">
+                            <td>
+                                <input type="hidden" value="${news.objid_}" name="objid" id="objid"/>
+                            </td>
+                        </tr>
                         <tr>
                             <th width="80"><font color="red">*</font> 栏目</th>
                             <td><input type="hidden" name="info[catid]" value="6">国内 <a href='javascript:;' onclick="omnipotent('selectid','?m=content&c=content&a=add_othors&siteid=1','同时发布到其他栏目',1);return false;" style='color:#B5BFBB'>[同时发布到其他栏目]</a>
@@ -121,7 +126,8 @@
                         <tr>
                             <th width="80"><font color="red">*</font> 标题</th>
                             <td>
-                                <input type="text" style="width:400px;" name="info.title" id="title" value="" style="color:" class="measure-input " onBlur="$.post('api.php?op=get_keywords&number=3&sid='+Math.random()*5, {data:$('#title').val()}, function(data){if(data && $('#keywords').val()=='') {$('#keywords').val(data);
+                                <input type="text" style="width:400px;" name="info.title" id="title" value="${news.title_}" style="color:" class="measure-input " onBlur="$.post('api.php?op=get_keywords&number=3&sid='+Math.random()*5, {data:$('#title').val()},
+                                function(data){if(data && $('#keywords').val()=='') {$('#keywords').val(data);
 } })" onkeyup="strlen_verify(this, 'title_len', 80);"/><input type="hidden" name="style_color" id="style_color" value="">
                                 <input type="hidden" name="style_font_weight" id="style_font_weight" value=""><input type="button" class="button" id="check_title_alt" value="检测重复" onclick="$.get('?m=content&c=content&a=public_check_title&catid=6&sid='+Math.random()*5, {data:$('#title').val()}, function(data){if(data=='1') {$('#check_title_alt').val('标题重复');$('#check_title_alt').css('background-color','#FFCC66');} else if(data=='0') {$('#check_title_alt').val('标题不重复');$('#check_title_alt').css('background-color','#F8FFE1')}})" style="width:73px;"/><img src="http://phpcms.com/statics/images/icon/colour.png" width="15" height="16" onclick="colorpicker('title_colorpanel','set_title_color');" style="cursor:hand"/>
                                 <img src="http://phpcms.com/statics/images/icon/bold.png" width="10" height="10" onclick="input_font_bold()" style="cursor:hand"/> <span id="title_colorpanel" style="position:absolute;" class="colorpanel"></span>还可输入<B><span id="title_len">80</span></B> 个字符
@@ -132,33 +138,18 @@
                             <th width="80"><font color="red">*</font> 内容</th>
                             <td>
                                 <div id='content_tip'></div>
-                                <textarea name="info.content" id="content" boxid="content"></textarea>
-                                <script type="text/javascript" src="http://phpcms.com/statics/js/ckeditor/ckeditor.js"></script>
-                                <script type="text/javascript">
-                                    CKEDITOR.replace('content', {height: 300, pages: true, subtitle: true, textareaid: 'content', module: 'content', catid: '6',
-                                        flashupload: true, alowuploadexts: '', allowbrowser: '1', allowuploadnum: '10', authkey: '9b7b233e6fc9f7824fa920cb355190ee',
-                                        filebrowserUploadUrl: 'http://phpcms.com/index.php?m=attachment&c=attachments&a=upload&module=content&catid=6&dosubmit=1',
-                                        toolbar: [
-                                            ['Source', '-', 'Templates'],
-                                            ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Print'],
-                                            ['Undo', 'Redo', '-', 'Find', 'Replace', '-', 'SelectAll', 'RemoveFormat'],
-                                            ['ShowBlocks'],
-                                            ['Image', 'Capture', 'Flash', 'MyVideo'],
-                                            ['Maximize'],
-                                            '/',
-                                            ['Bold', 'Italic', 'Underline', 'Strike', '-'],
-                                            ['Subscript', 'Superscript', '-'],
-                                            ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', 'Blockquote'],
-                                            ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
-                                            ['Link', 'Unlink', 'Anchor'],
-                                            ['Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak'],
-                                            '/',
-                                            ['Styles', 'Format', 'Font', 'FontSize'],
-                                            ['TextColor', 'BGColor'],
-                                            ['attachment']
-                                        ]
+                                <textarea name="info.content" id="content" boxid="content">${news.content_}</textarea>
+                                <script charset="utf-8" src="/statics/js/kindeditor/kindeditor-all-min.js"></script>
+                                <script charset="utf-8" src="/statics/js/kindeditor/lang/zh_CN.js"></script>
+                                <script>
+                                    KindEditor.ready(function(K) {
+                                        window.editor = K.create('#content', {
+                                            width : '670px',
+                                            height:'400px'
+                                        });
                                     });
                                 </script>
+
                                 <div class='editor_bottom'>
                                     <script type="text/javascript" src="http://phpcms.com/statics/js/swfupload/swf2ckeditor.js"></script>
                                 </div>
@@ -257,7 +248,7 @@
     function refersh_window(type)
     {
 
-//        setcookie('refersh_time', 1);
+        setcookie('refersh_time', 1);//设置关闭会刷新
 
 //        $.post("/test/test/curd/do_add", { name: "John", time: "2pm" },
 //                function(data){
@@ -265,7 +256,7 @@
 //                });
 
 
-        $.post("/test/test/curd/do_add", {title:"aaa" ,content: "bbbb" }, function (data)
+        $.post("/test/test/curd/do_addup", {objid:""+$("#objid").val()+"",title:""+$("#title").val()+"" ,content: ""+editor.html()+"" }, function (data)
         {
             //执行成功后
             if (type == "dosubmit")//保存后自动关闭

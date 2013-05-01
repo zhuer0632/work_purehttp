@@ -4,11 +4,16 @@ import com.comdev.consts.SysConst;
 import com.comdev.db.DbKit;
 import com.comdev.vos.VONews;
 import com.me.ut.string.StringUT;
+import org.nutz.dao.Chain;
+import org.nutz.dao.Cnd;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * User: zhu
@@ -27,6 +32,17 @@ public class curd
         return "test/test/curd/show";
     }
 
+
+    @RequestMapping("list")
+    @ResponseBody
+    public Map list()
+    {
+        Map out = new HashMap();
+        out.put("data", DbKit.getDao().query(VONews.class, null));
+        return out;
+    }
+
+
     //显示添加的页面
     @RequestMapping("show_add")
     public String show_add()
@@ -34,12 +50,32 @@ public class curd
         return "test/test/curd/add";
     }
 
-    //执行添加命令
-    @RequestMapping("do_add")
-    @ResponseBody
-    public String do_add(@RequestParam("title") String title, @RequestParam("content") String content)
+    @RequestMapping("show_edit")
+    public ModelAndView show_edit(@RequestParam("objid_") String objid_)
     {
-        DbKit.getDao().insert(VONews.me(title, content));
+
+        ModelAndView mod = new ModelAndView();
+        VONews news = DbKit.getDao().fetch(VONews.class, objid_);
+
+        mod.addObject("news", news);
+
+        mod.setViewName("test/test/curd/add");
+        return mod;
+    }
+
+    //执行添加命令
+    @RequestMapping("do_addup")
+    @ResponseBody
+    public String do_addup(@RequestParam("objid") String objid, @RequestParam("title") String title, @RequestParam("content") String content)
+    {
+        if (StringUT.isEmpty(objid))
+        {
+            DbKit.getDao().insert(VONews.me(title, content));
+        }
+        else
+        {
+            DbKit.getDao().update(VONews.class, Chain.make("title_", title).add("content_", content), Cnd.where("objid_", "=", objid));
+        }
         return "";
     }
 
@@ -50,7 +86,7 @@ public class curd
 
         mod.addObject("type", type);
         mod.addObject("data", StringUT.Base64_decode(data.replace("-", "+").replace("_", "/"), "UTF-8"));
-        mod.addObject("href", StringUT.Base64_decode(href.replace("-", "+").replace("_", "/"),"UTF-8"));
+        mod.addObject("href", StringUT.Base64_decode(href.replace("-", "+").replace("_", "/"), "UTF-8"));
         mod.setViewName("/test/test/curd/showmessage");
 
         return mod;
