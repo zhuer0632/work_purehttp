@@ -14,7 +14,7 @@
     <link media="screen" title="styles3" href="http://phpcms.com/statics/css/style/zh-cn-styles3.css" type="text/css" rel="alternate stylesheet">
     <link media="screen" title="styles4" href="http://phpcms.com/statics/css/style/zh-cn-styles4.css" type="text/css" rel="alternate stylesheet">
     <script src="http://phpcms.com/statics/js/jquery.min.js" type="text/javascript" language="javascript"></script>
-    <script src="http://phpcms.com/statics/js/admin_common.js" type="text/javascript" language="javascript"></script>
+    <script src="/statics/js/admin_common.js" type="text/javascript" language="javascript"></script>
     <script src="http://phpcms.com/statics/js/styleswitch.js" type="text/javascript" language="javascript"></script>
     <script type="text/javascript">
         window.focus();
@@ -90,7 +90,7 @@
 </script>
 <div class="pad-10">
     <div class="content-menu ib-a blue line-x">
-        <a onclick="javascript:openwinx('?m=content&amp;c=content&amp;a=add&amp;menuid=&amp;catid=8&amp;pc_hash=ku0ktr','')" href="javascript:;" class="add fb"><em>添加内容</em></a>&#12288;
+        <a onclick="javascript:openwinx('/test/test/curd/show_add','')" href="javascript:;" class="add fb"><em>添加内容</em></a>&#12288;
         <a class="on" href="?m=content&amp;c=content&amp;a=init&amp;catid=8&amp;pc_hash=ku0ktr"><em>审核通过</em></a><span>|</span>
         <a onclick="javascript:$('#searchid').css('display','');" href="javascript:;"><em>搜索</em></a>
     </div>
