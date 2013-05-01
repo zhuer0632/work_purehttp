@@ -16,8 +16,10 @@ window.ReplaceBase64 = function (base64)
 {
     var regS = new RegExp("\\+", "gi");
     var regS2 = new RegExp("/", "gi");
+    var regS3 = new RegExp("=", "gi");
     var s = base64.replace(regS, "-"); // 全部替换
     s = s.replace(regS2, "_"); // 全部替换
+    s = s.replace(regS3, "."); // 全部替换
     return s;
 }
 

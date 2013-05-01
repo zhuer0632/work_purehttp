@@ -16,6 +16,7 @@
     <script src="http://phpcms.com/statics/js/jquery.min.js" type="text/javascript" language="javascript"></script>
     <script src="/statics/js/admin_common.js" type="text/javascript" language="javascript"></script>
     <script src="/statics/js/common.js" type="text/javascript" language="javascript"></script>
+    <script src="/statics/js/commons/Base64.js" type="text/javascript" language="javascript"></script>
     <script src="http://phpcms.com/statics/js/styleswitch.js" type="text/javascript" language="javascript"></script>
     <script type="text/javascript">
         window.focus();
@@ -93,7 +94,7 @@
     <div class="content-menu ib-a blue line-x">
         <a onclick="javascript:openwinx('/test/test/curd/show_add','')" href="javascript:;" class="add fb"><em>添加内容</em></a>&#12288;
         <a class="on" href="?m=content&amp;c=content&amp;a=init&amp;catid=8&amp;pc_hash=ku0ktr"><em>审核通过</em></a><span>|</span>
-        <a onclick="javascript:$('#searchid').css('display','');" href="javascript:;"><em>搜索</em></a>
+        <a onclick="javascript:$('#searchid').toggle('slow');" href="javascript:;"><em>搜索</em></a>
     </div>
     <div style="display:none" id="searchid">
         <form method="get" action="" name="searchform">
@@ -109,57 +110,11 @@
                 <tr>
                     <td>
                         <div class="explain-col">
-
-                            添加时间：
-                            <link href="http://phpcms.com/statics/js/calendar/jscal2.css" type="text/css" rel="stylesheet">
-                            <link href="http://phpcms.com/statics/js/calendar/border-radius.css" type="text/css" rel="stylesheet">
-                            <link href="http://phpcms.com/statics/js/calendar/win2k.css" type="text/css" rel="stylesheet">
-                            <script src="http://phpcms.com/statics/js/calendar/calendar.js" type="text/javascript"></script>
-                            <script src="http://phpcms.com/statics/js/calendar/lang/en.js" type="text/javascript"></script>
-                            <input type="text" readonly="" class="date input-text" size="10" value="" id="start_time" name="start_time">&nbsp;
-                            <script type="text/javascript">
-                                Calendar.setup({
-                                    weekNumbers: false,
-                                    inputField: "start_time",
-                                    trigger: "start_time",
-                                    dateFormat: "%Y-%m-%d",
-                                    showTime: false,
-                                    minuteStep: 1,
-                                    onSelect: function ()
-                                    {
-                                        this.hide();
-                                    }
-                                });
-                            </script>
-                            - &nbsp;<input type="text" readonly="" class="date input-text" size="10" value="" id="end_time" name="end_time">&nbsp;
-                            <script type="text/javascript">
-                                Calendar.setup({
-                                    weekNumbers: false,
-                                    inputField: "end_time",
-                                    trigger: "end_time",
-                                    dateFormat: "%Y-%m-%d",
-                                    showTime: false,
-                                    minuteStep: 1,
-                                    onSelect: function ()
-                                    {
-                                        this.hide();
-                                    }
-                                });
-                            </script>
-                            <select name="posids">
-                                <option selected="" value="">全部</option>
-                                <option value="1">推荐</option>
-                                <option value="2">不推荐</option>
-                            </select>
-                            <select name="searchtype">
-                                <option selected="" value="0">标题</option>
-                                <option value="1">简介</option>
-                                <option value="2">用户名</option>
-                                <option value="3">ID</option>
-                            </select>
-
-                            <input type="text" class="input-text" value="" name="keyword">
-                            <input type="submit" value="搜索" class="button" name="search">
+                             标题：
+                            <input type="text" class="input-text" value="" name="args_title" id="args_title">
+                            内容：
+                            <input type="text" class="input-text" value="" name="args_content" id="args_content" >
+                            <input type="button"  onclick="javascript:page(1)"  value="搜索" class="button" name="search" id="search">
                         </div>
                     </td>
                 </tr>
@@ -211,9 +166,13 @@
 
     });
 
-    function page(pageno)
+    function page(pageno,args)
     {
-        $.get("/test/test/curd/list/?pageno="+pageno+"&etag="+time(), function (data)
+        var base64=new Base64();
+        //多个参数需要用 {&}分开，key和value用{=}连接
+
+        var args=ReplaceBase64(base64.encode("title_{=}"+$("#args_title").val()+"{&}content_{=}"+$("#args_content").val()+""));
+        $.get("/test/test/curd/list/?pageno="+pageno+"&args="+args+"&etag="+time(), function (data)
         {
             clearTableTr($("#tb"));
             $(data['datas']).each(function (index, em)

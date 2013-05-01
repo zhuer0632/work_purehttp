@@ -1,5 +1,7 @@
 package com.comdev.common;
 
+import com.comdev.consts.SysConst;
+import org.nutz.dao.pager.Pager;
 import org.springframework.stereotype.Component;
 
 /**
@@ -25,6 +27,12 @@ public class Page
      */
     public static String pages(int pagenums, int curr_page, String pageurl)
     {
+        pagenums=  pagenums % Pager.DEFAULT_PAGE_SIZE == 0 ? pagenums / Pager.DEFAULT_PAGE_SIZE : pagenums/ Pager.DEFAULT_PAGE_SIZE + 1;
+
+        if(pagenums==1)
+        {
+            return  "";
+        }
         String multipage = new String();
 
         int page = 11;//最全状态下要显示的数量，两个省略号中的数量+2=11
@@ -70,7 +78,7 @@ public class Page
             }
             else
             {
-                multipage += "<a href=" + String.format(pageurl,"1") + ">1</a>  ";
+                multipage += " <a href=" + String.format(pageurl,"1") + ">1</a>  ";
             }
         }
 
@@ -79,7 +87,7 @@ public class Page
         {
             if (i != curr_page)
             {
-                multipage += "<a href=" + String.format(pageurl,i) + ">" + i + "</a>  ";
+                multipage += " <a href=" + String.format(pageurl,i) + ">" + i + "</a>  ";
             }
             else
             {
@@ -92,11 +100,11 @@ public class Page
         {
             if (curr_page < pages - 5 && more > 0)
             {
-                multipage += " ..<a href=" + String.format(pageurl,pages) + ">" + pages + "</a> <a class=\"a1\" href=" + String.format(pageurl,curr_page+1) + ">下一页</a> ";
+                multipage += "  .. <a href=" + String.format(pageurl,pages) + ">" + pages + "</a> <a class=\"a1\" href=" + String.format(pageurl,curr_page+1) + ">下一页</a> ";
             }
             else
             {
-                multipage += " <a href=" + String.format(pageurl,pages) + ">" + pages + "</a> <a class=\"a1\" href=" + String.format(pageurl,curr_page+1) + ">下一页</a>  ";
+                multipage += "  <a href=" + String.format(pageurl,pages) + ">" + pages + "</a> <a class=\"a1\" href=" + String.format(pageurl,curr_page+1) + ">下一页</a>  ";
             }
         }
         else if (curr_page == pages)

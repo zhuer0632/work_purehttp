@@ -9,6 +9,7 @@ import org.nutz.dao.Chain;
 import org.nutz.dao.Cnd;
 import org.nutz.dao.pager.Pager;
 import org.nutz.dao.sql.Criteria;
+import org.nutz.dao.util.cri.SimpleCriteria;
 import org.nutz.lang.Lang;
 import org.nutz.lang.random.StringGenerator;
 import org.springframework.stereotype.Controller;
@@ -40,21 +41,39 @@ public class curd
 
     @RequestMapping("list")
     @ResponseBody
-    public Map list(@RequestParam("pageno") int pageno)
+    public Map list(@RequestParam("pageno") int pageno, @RequestParam("args") String args)
     {
         Map out = new HashMap();
 
-        int allcount=DbKit.getDao().count(VONews.class);
 
-
-        Pager pager=new Pager();
+        Pager pager = new Pager();
         pager.setPageNumber(pageno);
-        pager.setPageSize(1);//1
-        out.put("datas", DbKit.getDao().query(VONews.class, null,pager));
+        Pager.DEFAULT_PAGE_SIZE = 1;//1
+
+
+        String in = StringUT.Base64_decode_url(args);
+        String[] in_arr = in.split("\\{&\\}");
+
+        SimpleCriteria cri = Cnd.cri();
+        for (int i = 0; i < in_arr.length; i++)
+        {
+            String temp = in_arr[i];
+            String[] temp_arr = temp.split("\\{=\\}");
+            if(temp_arr.length==1)
+            {
+                    continue;
+            }
+            cri.where().andLike(temp_arr[0], temp_arr[1]);
+        }
+
+        int allcount = DbKit.getDao().count(VONews.class,cri);
+
+        out.put("datas", DbKit.getDao().query(VONews.class, cri, pager));
 
         //%s是页码
-        out.put("pages", Page.pages(allcount,pageno,"javascript:page(%s);"));
+        out.put("pages", Page.pages(allcount, pageno, "javascript:page(%s,'" + args + "');"));
         return out;
+
     }
 
 
