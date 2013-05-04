@@ -147,7 +147,7 @@
         </div>
     </div>
     <div class="col-auto">
-        <div class="log white cut_line">您好！admin [超级管理员]<span>|</span><a href="javascript:void(0);">[退出]</a><span>|</span>
+        <div class="log white cut_line">您好！admin [超级管理员]<span>|</span><a href="javascript:logout();">[退出]</a><span>|</span>
             <a id="site_homepage" href="javascript:void(0);">站点首页</a><span>|</span>
             <a href="javascript:void(0);">会员中心</a><span>|</span>
             <a id="site_search" href="javascript:void(0);">搜索</a>
@@ -468,6 +468,15 @@
                 $('#lock_tips').html('<font color="red">密码错误，您还有' + strings[1] + '次尝试机会！</font>');
             }
         });
+    }
+
+    function logout()
+    {
+        $.get("/login/logout", function (data)
+        {
+            redirect("/");
+        });
+
     }
 
 </script>

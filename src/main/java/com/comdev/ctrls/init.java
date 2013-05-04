@@ -1,10 +1,13 @@
 package com.comdev.ctrls;
 
+import com.comdev.vos.VOLogon;
 import org.nutz.dao.impl.NutDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -15,6 +18,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 @RequestMapping("/")
+@SessionAttributes("curuser")
 public class init
 {
 
@@ -38,10 +42,18 @@ public class init
 
 
     @RequestMapping("/indexmain")
-    public ModelAndView indexmain()
+    public ModelAndView indexmain(@ModelAttribute("curuser")VOLogon voLogon)
     {
         ModelAndView out = new ModelAndView();
         out.setViewName("indexmain");
+        return out;
+    }
+
+    @RequestMapping("/admin")
+    public ModelAndView index(@ModelAttribute("curuser")VOLogon voLogon)
+    {
+        ModelAndView out = new ModelAndView();
+        out.setViewName("index");
         return out;
     }
 
@@ -51,7 +63,7 @@ public class init
      */
     @RequestMapping("init")
     @ResponseBody
-    public String init()
+    public String init(@ModelAttribute("curuser")VOLogon voLogon)
     {
         return "<h3 class=\"f14\"><span class=\"switchs cu on\" title=\"展开与收缩\"></span>Meta</h3>\n" +
                 "\n" +

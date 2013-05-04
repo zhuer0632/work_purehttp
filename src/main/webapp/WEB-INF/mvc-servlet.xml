@@ -76,7 +76,9 @@
     -->
 
     <!-- 拦截器-处理编码、超时登录 -->
-
+    <mvc:interceptors>
+        <bean class="com.comdev.common.AppInerceptor"/>
+    </mvc:interceptors>
 
     <!-- 文件上传  -->
     <!--  这里申明的id必须为multipartResolver  -->

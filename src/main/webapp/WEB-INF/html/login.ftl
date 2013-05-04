@@ -130,14 +130,14 @@
             {
                 show_msgbox("", "登录成功 3");
                 //显示延迟跳转
-                var i = 3;
+                var i = 2;
                 fortimer(function(){
                     i=i-1;
                     $(".errmsg").html("登录成功 "+i);
                     if(i==1)
                     {
                         timer(function (){
-                            redirect("http://baidu.com")
+                            redirect("/admin")
                         },1000);
                     }
                 }, 1000);//每1秒执行一次
