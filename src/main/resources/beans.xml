@@ -41,9 +41,6 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 
-	<!--所有services-->
-	<!-- 自动检测注解 -->
-	<context:component-scan base-package="com.comdev.ctrls" />
 
 	<!-- 将datasource交spring事务管理 -->
 	<bean id="txManager"

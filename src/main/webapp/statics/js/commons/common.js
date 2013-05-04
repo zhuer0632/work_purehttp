@@ -58,12 +58,16 @@ function hasStr(strSrc, subStr)
     return false;
 }
 
-
 /**
- * 弹出错误提示,并且3秒钟后消失,并且指定的文本框的背景高亮快闪。
+ *
+ * <div class="msgbox">
+    <span class="errmsg"></span><span class="errclose">×</span>
+    </div>
+
+ * @param inputId
+ * @param str_errMsg
  */
-function setMsg(str_type, str_Name, str_errMsg)
-{
+function show_msgbox(inputId, str_errMsg) {
     // div[class='msgbox']->span[class='errmsg'] 设置内容为str_errMsg，然后这个对象三秒钟内消失。
     var msgspan = $("span[class='errmsg']");
     $(msgspan).html(str_errMsg);
@@ -72,37 +76,46 @@ function setMsg(str_type, str_Name, str_errMsg)
     // $(msgbox).css("visibility","visible");
     $(msgbox).slideDown("slow");
 
+    var  obj=$("#"+inputId+"");
+
     //setTimeout(callLater(showmsg, msgbox), 3000);
-    $(".errclose").bind("click", function ()
-    {
+    $(".errclose").bind("click",function(){
         $(".msgbox").slideUp("slow");
+//        removeheighLight(obj);
+        if(obj==undefined||inputId=="")
+        {
+            return ;
+        }else
+        setTimeout(callLaterSetheighLight(removeheighLight, obj), 1000);// 立刻回到顶部,这个时候用户看完顶部提示，再下来看具体位置[多出两秒钟的时间来定为]
     });
 
     // 高亮文本框
-    if (str_type == undefined || str_type == "")
+    if(obj==undefined||inputId=="")
     {
-        return;
+        return ;
     }
-
-    setheighLight(str_type, str_Name);
-    setTimeout(callLaterSetheighLight(removeheighLight, str_type, str_Name), 6000);// 立刻回到顶部,这个时候用户看完顶部提示，再下来看具体位置[多出两秒钟的时间来定为]
-    $("" + str_type + "[name='" + str_Name + "']").focus();
+    setheighLight(obj);
+//    setTimeout(callLaterSetheighLight(removeheighLight, obj), 6000);// 立刻回到顶部,这个时候用户看完顶部提示，再下来看具体位置[多出两秒钟的时间来定为]
+    $(obj).focus();
     $('html,body').animate({
-        scrollTop: 0
+        scrollTop : 0
     }, 'fast');
+
 }
 
-function callLater(fRef, argu1)
-{
-    return (function ()
-    {
-        fRef(argu1);
+
+function callLaterSetheighLight(fRef, arg1, arg2) {
+    return (function() {
+        fRef(arg1, arg2);
     });
-};
-
-function showmsg(msgbox)
-{
-    $(msgbox).slideUp("slow");
-    // $(msgbox).css("visibility","hidden");
 }
+
+function setheighLight(obj) {
+    $(obj).addClass("errHighlight");
+}
+function removeheighLight(obj) {
+    $(obj).removeClass("errHighlight");
+}
+
+
 

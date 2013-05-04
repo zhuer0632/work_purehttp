@@ -61,8 +61,6 @@
             margin-top: 10px;
             font-family: Arial;
 
-
-
         }
 
         .button
@@ -76,19 +74,80 @@
             border: none;
         }
     </style>
+    <link href="/statics/css/tips.css" rel="stylesheet" type="text/css">
 </head>
 <body class="bg">
+
+<div class="msgbox">
+    <span class="errmsg"></span><span class="errclose">×</span>
+</div>
 
 <div class="login_bg">
 
     <div class="label_username">用户名：</div>
     <div>
-        <input type="text" name="usename" class="input"/>
+        <input type="text" name="usename" id="username" class="input"/>
     </div>
     <div class="label_password">密码：</div>
-    <div><input type="text" name="password" class="input"/></div>
-    <div class="button"><a href="javascript:void (0)"><img src="/statics/images/login_but.jpg"></a></div>
+    <div><input type="text" name="password" id="password" class="input"/></div>
+    <div class="button"><a href="javascript:login ()"><img src="/statics/images/login_but.jpg"></a></div>
 </div>
 
 </body>
 </html>
+<script src="/statics/js/jquery-1.8.3.min.js"></script>
+<script src="/statics/js/admin_common.js"></script>
+<script src="/statics/js/commons/common.js"></script>
+<script src="/statics/js/commons/commonCheck.js"></script>
+<script>
+    function login()
+    {
+        if (!checkLogin())
+        {
+            return;
+        }
+    }
+    function checkLogin()
+    {
+        if (isBlank($("#username").val()))
+        {
+            show_msgbox("username", "用户名不能为空");
+            return false;
+        }
+
+        if (isBlank($("#password").val()))
+        {
+            show_msgbox("password", "密码不能为空");
+            return false;
+        }
+
+        $.post("/login/login", {username: $("#username").val(), password: $("#password").val()}, function (data)
+        {
+            //显示登录成功
+
+
+            if (data == "登录成功")
+            {
+                show_msgbox("", "登录成功 3");
+                //显示延迟跳转
+                var i = 3;
+                fortimer(function(){
+                    i=i-1;
+                    $(".errmsg").html("登录成功 "+i);
+                    if(i==1)
+                    {
+                        timer(function (){
+                            redirect("http://baidu.com")
+                        },1000);
+                    }
+                }, 1000);//每1秒执行一次
+            }
+            else{
+                show_msgbox("", data);
+            }
+        });
+
+    }
+
+
+</script>

@@ -90,6 +90,16 @@ function time()
     return d.getTime();
 }
 
+function timer(fun, second)
+{
+    setTimeout(fun,second);
+}
+
+function fortimer(fun,second)
+{
+    setInterval(fun,second);
+}
+
 /**
  *  输入Date.getTime(),返回 yyyy-MM-dd HH:mm:ss
  */

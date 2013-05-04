@@ -31,7 +31,7 @@
     </bean>
 
     <!-- 自动检测注解 -->
-    <context:component-scan base-package="com.comdev"/>
+    <context:component-scan base-package="com.comdev.biz,com.comdev.ctrls"/>
 
     <!-- 自动装配LocalValidatorFactoryBean -->
     <mvc:annotation-driven/>

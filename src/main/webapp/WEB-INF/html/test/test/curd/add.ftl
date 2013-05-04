@@ -15,7 +15,7 @@
     <link rel="alternate stylesheet" type="text/css" href="http://phpcms.com/statics/css/style/zh-cn-styles4.css" title="styles4" media="screen"/>
     <script language="javascript" type="text/javascript" src="/statics/js/jquery-1.8.3.min.js"></script>
     <script language="javascript" type="text/javascript" src="/statics/js/admin_common.js"></script>
-    <script language="javascript" type="text/javascript" src="/statics/js/common.js"></script>
+    <script language="javascript" type="text/javascript" src="/statics/js/commons/common.js/js/common.js"></script>
     <script language="javascript" type="text/javascript" src="/statics/js/commons/Base64.js"></script>
     <script language="javascript" type="text/javascript" src="http://phpcms.com/statics/js/styleswitch.js"></script>
     <script language="javascript" type="text/javascript" src="http://phpcms.com/statics/js/formvalidator.js" charset="UTF-8"></script>
