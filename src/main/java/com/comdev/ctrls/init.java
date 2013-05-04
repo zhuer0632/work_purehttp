@@ -30,8 +30,9 @@ public class init
 
         out.addObject("db", dao.meta().getProductName() + "--" + dao.meta().getVersion());
 
-        out.setViewName("index");
+//        out.setViewName("index");
 
+        out.setViewName("login");
         return out;
     }
 

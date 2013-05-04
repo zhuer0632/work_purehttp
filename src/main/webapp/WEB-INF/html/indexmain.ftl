@@ -2,7 +2,8 @@
 
 <head>
     <style>
-        div {
+        div
+        {
             margin: 20px;
             border: solid 1px red;
             padding: 10px;
