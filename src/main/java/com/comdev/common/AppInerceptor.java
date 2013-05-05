@@ -25,9 +25,7 @@ public class AppInerceptor implements HandlerInterceptor
     @Override
     public boolean preHandle(HttpServletRequest httpreq, HttpServletResponse reps, Object o) throws Exception
     {
-
         //当时swfupload的时候，需要用js重新写一份cookie，让浏览器发出的请求写带过来
-
         if (!StringUT.isChrome(httpreq) && !StringUT.isFirefox(httpreq) && !StringUT.isSWF(httpreq))
         {
             reps.setCharacterEncoding("UTF-8");
