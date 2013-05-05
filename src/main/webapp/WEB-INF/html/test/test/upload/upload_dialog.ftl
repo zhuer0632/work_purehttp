@@ -7,13 +7,13 @@
     <link type="text/css" rel="stylesheet" href="http://phpcms.com/statics/css/zh-cn-system.css">
     <link type="text/css" rel="stylesheet" href="http://phpcms.com/statics/css/table_form.css">
     <link media="screen" title="styles1" href="http://phpcms.com/statics/css/style/zh-cn-styles1.css" type="text/css"
-          rel="stylesheet">
+            rel="stylesheet">
     <link media="screen" title="styles2" href="http://phpcms.com/statics/css/style/zh-cn-styles2.css" type="text/css"
-          rel="alternate stylesheet">
+            rel="alternate stylesheet">
     <link media="screen" title="styles3" href="http://phpcms.com/statics/css/style/zh-cn-styles3.css" type="text/css"
-          rel="alternate stylesheet">
+            rel="alternate stylesheet">
     <link media="screen" title="styles4" href="http://phpcms.com/statics/css/style/zh-cn-styles4.css" type="text/css"
-          rel="alternate stylesheet">
+            rel="alternate stylesheet">
     <script src="/statics/js/jquery-1.8.3.min.js" type="text/javascript" language="javascript"></script>
     <script src="http://phpcms.com/statics/js/admin_common.js" type="text/javascript" language="javascript"></script>
     <script src="http://phpcms.com/statics/js/styleswitch.js" type="text/javascript" language="javascript"></script>
@@ -25,9 +25,11 @@
     <script src="http://phpcms.com/statics/js/styleswitch.js" type="text/javascript" language="javascript"></script>
     <script src="/statics/js/art/jquery.artDialog.js?skin=blue" type="text/javascript" language="javascript"></script>
     <script src="/statics/js/art/plugins/iframeTools.js" type="text/javascript" language="javascript"></script>
+    <script src="/statics/js/commons/jsession.js" type="text/javascript" language="javascript"></script>
 
     <style type="text/css">
-        html {
+        html
+        {
             _overflow-y: scroll
         }
     </style>
@@ -40,36 +42,41 @@
         $(document).ready(function ()
         {
             swfu = new SWFUpload({
-                flash_url: "/statics/js/swfupload/swfupload.swf?" + Math.random(),
+                flash_url: "/statics/js/swfupload/swfupload.swf?etag=" + Math.random(),
                 upload_url: "/file/upload",
                 file_post_name: "Filedata",
-                post_params: {"SWFUPLOADSESSID": "1366642979", "module": "", "catid": "", "userid": "1", "siteid": "1", "dosubmit": "1", "thumb_width": "0", "thumb_height": "0", "watermark_enable": "1", "filetype_post": "jpg|jpeg|gif|bmp|png|doc|docx|xls|xlsx|ppt|pptx|pdf|txt|rar|zip|swf", "swf_auth_key": "8cf1c61751463b76528af6592f3c224b", "isadmin": "1", "groupid": "8"},
-                file_size_limit: "2048000",
-                file_types: "*.jpg;*.jpeg;*.gif;*.bmp;*.png;*.doc;*.docx;*.xls;*.xlsx;*.ppt;*.pptx;*.pdf;*.txt;*.rar;*.zip;*.swf",
-                file_types_description: "All Files",
-                file_upload_limit: "10",
-                custom_settings: {progressTarget: "fsUploadProgress", cancelButtonId: "btnCancel"},
+                post_params: {"abc": "abc", "module": "123" },
+                    file_size_limit: "2048000",
+                    file_types: "*.jpg;*.jpeg;*.gif;*.bmp;*.png;*.doc;*.docx;*.xls;*.xlsx;*.ppt;*.pptx;*.pdf;*.txt;*.rar;*.zip;*.swf",
+                    file_types_description: "All Files",
+                    file_upload_limit: "10",
+                    custom_settings: {progressTarget: "fsUploadProgress", cancelButtonId: "btnCancel"},
 
-                //此处总会调用一下;随便便写个不为404的地址
-                button_image_url: "/",
-                button_width: 75,
-                button_height: 28,
-                button_placeholder_id: "buttonPlaceHolder",
-                button_text_style: "",
-                button_text_top_padding: 3,
-                button_text_left_padding: 12,
-                button_window_mode: SWFUpload.WINDOW_MODE.TRANSPARENT,
-                button_cursor: SWFUpload.CURSOR.HAND,
+                    //此处总会调用一下;随便便写个不为404的地址
+                    button_image_url: "/",
+                    button_width: 75,
+                    button_height: 28,
+                    button_placeholder_id: "buttonPlaceHolder",
+                    button_text_style: "",
+                    button_text_top_padding: 3,
+                    button_text_left_padding: 12,
+                    button_window_mode: SWFUpload.WINDOW_MODE.TRANSPARENT,
+                    button_cursor: SWFUpload.CURSOR.HAND,
 
-                file_dialog_start_handler: fileDialogStart,
-                file_queued_handler: fileQueued,
-                file_queue_error_handler: fileQueueError,
-                file_dialog_complete_handler: fileDialogComplete,
-                upload_progress_handler: uploadProgress,
-                upload_error_handler: uploadError,
-                upload_success_handler: uploadSuccess,
-                upload_complete_handler: uploadComplete
-            });
+                    file_dialog_start_handler: fileDialogStart,
+                    file_queued_handler: fileQueued,
+                    file_queue_error_handler: fileQueueError,
+                    file_dialog_complete_handler: fileDialogComplete,
+                    upload_progress_handler: uploadProgress,
+                    upload_error_handler: uploadError,
+                    upload_success_handler: uploadSuccess,
+                    upload_complete_handler: uploadComplete
+                });
+
+                //浏览器会自动携带过去
+                setcookie("JSESSIONID","${JSESSIONID}");
+
+
         })</script>
 </head>
 <body>
@@ -87,7 +94,11 @@
                     <span id="buttonPlaceHolder"></span>
                 </div>
                 <input type="button" onclick="swfu.startUpload();" value="开始上传" id="btupload">
-
+            <#assign cookies = request.getCookies()>
+            <#list cookies as cookie>
+            ${cookie.name}
+            ${cookie.value}
+            </#list>
                 <div class="onShow" id="nameTip">最多上传<font color="red"> 10</font> 个附件,单文件最大 <font color="red">2
                     MB</font></div>
                 <div class="bk3"></div>
@@ -109,7 +120,7 @@
             请输入网络地址
             <div class="bk3"></div>
             <input type="text" onblur="addonlinefile(this)" style="width:350px;" value="" class="input-text"
-                   name="info[filename]">
+                    name="info[filename]">
 
             <div class="bk10"></div>
         </div>
@@ -150,7 +161,8 @@
                     $('#div_' + name + '_' + i).show();
                     $('#tab_' + name + '_' + i).addClass(cls_show);
                     $('#tab_' + name + '_' + i).removeClass(cls_hide);
-                } else
+                }
+                else
                 {
                     $('#div_' + name + '_' + i).hide();
                     $('#tab_' + name + '_' + i).removeClass(cls_show);
@@ -170,7 +182,8 @@
             if ($('#watermark_enable').attr('checked'))
             {
                 swfu.addPostParam('watermark_enable', '1');
-            } else
+            }
+            else
             {
                 swfu.removePostParam('watermark_enable');
             }
@@ -197,7 +210,8 @@
                 }
                 $('#att-status').html(strs);
                 $('#att-status').html(filenames);
-            } else
+            }
+            else
             {
                 var num = $('#att-status').html().split('|').length;
                 var file_upload_limit = '10';

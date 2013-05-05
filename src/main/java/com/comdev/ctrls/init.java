@@ -41,8 +41,15 @@ public class init
     }
 
 
+    @RequestMapping("showmsg")
+    public String showmsg()
+    {
+        return "showmsg";
+    }
+
+
     @RequestMapping("/indexmain")
-    public ModelAndView indexmain(@ModelAttribute("curuser")VOLogon voLogon)
+    public ModelAndView indexmain(@ModelAttribute("curuser") VOLogon voLogon)
     {
         ModelAndView out = new ModelAndView();
         out.setViewName("indexmain");
@@ -50,7 +57,7 @@ public class init
     }
 
     @RequestMapping("/admin")
-    public ModelAndView index(@ModelAttribute("curuser")VOLogon voLogon)
+    public ModelAndView index(@ModelAttribute("curuser") VOLogon voLogon)
     {
         ModelAndView out = new ModelAndView();
         out.setViewName("index");
@@ -59,11 +66,12 @@ public class init
 
     /**
      * 进入后台首页的时候初始化左侧菜单
+     *
      * @return
      */
     @RequestMapping("init")
     @ResponseBody
-    public String init(@ModelAttribute("curuser")VOLogon voLogon)
+    public String init(@ModelAttribute("curuser") VOLogon voLogon)
     {
         return "<h3 class=\"f14\"><span class=\"switchs cu on\" title=\"展开与收缩\"></span>Meta</h3>\n" +
                 "\n" +
@@ -104,8 +112,6 @@ public class init
                 "});\n" +
                 "</script>";
     }
-
-
 
 
 }

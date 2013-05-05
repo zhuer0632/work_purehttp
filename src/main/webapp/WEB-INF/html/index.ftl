@@ -124,7 +124,7 @@
 
 <div class="header" style="width: auto;">
     <div class="logo lf">
-        <a href="/">
+        <a href="/admin">
             <span class="invisible"></span>
         </a>
     </div>
@@ -183,6 +183,9 @@
                 <a target="right" href="javascript:void(0);"><span>更新缓存</span></a><a href="javascript:void(0);"><span>后台地图</span></a>
             </div>
             当前位置：
+
+        <#assign path="${request.getCookies()[1].getValue()}">
+        ${path}
             <span id="current_pos">我的面板 &gt; 个人信息 &gt; 修改个人信息 &gt;
                 <span id="current_pos_attr"></span>
             </span>

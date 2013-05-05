@@ -1,7 +1,12 @@
 package com.comdev.ctrls.test.test;
 
+import com.me.ut.string.StringUT;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * User: zhu
@@ -21,12 +26,16 @@ public class upload
 
 
     @RequestMapping("upload_dialog")
-    public String upload_dialog()
+    public ModelAndView upload_dialog(HttpServletRequest request, HttpServletResponse reps)
     {
-        return "test/test/upload/upload_dialog";
+        ModelAndView mod = new ModelAndView();
+        mod.setViewName("test/test/upload/upload_dialog");
+        mod.addObject("JSESSIONID", StringUT.JSESSIONID(request));
+
+        //Set-Cookie	JSESSIONID=cjpjezkswurq;Path=/
+//        reps.setHeader("Set-Cookie","JSESSIONID="+StringUT.JSESSIONID(request)+";Path=/");
+        return mod;
     }
-
-
 
 
 }

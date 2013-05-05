@@ -130,7 +130,7 @@
             {
                 show_msgbox("", "登录成功 3");
                 //显示延迟跳转
-                var i = 2;
+                var i = 3;
                 fortimer(function(){
                     i=i-1;
                     $(".errmsg").html("登录成功 "+i);

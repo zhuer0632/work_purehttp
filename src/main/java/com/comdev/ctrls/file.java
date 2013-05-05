@@ -4,13 +4,11 @@ import com.comdev.common.WebPath;
 import com.comdev.consts.SysConst;
 import com.comdev.db.DbKit;
 import com.comdev.vos.VOFile;
+import com.comdev.vos.VOLogon;
 import com.me.ut.date.DatetimeUT;
 import com.me.ut.string.StringUT;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
@@ -27,6 +25,7 @@ import java.util.Date;
 
 @Controller
 @RequestMapping("file")
+@SessionAttributes("curuser")
 public class file
 {
 
@@ -36,7 +35,7 @@ public class file
     /**
      *  28,http://phpcms.com/up...884.ppt,ppt,UML基础教程.ppt
      */
-    public String upload(@RequestParam("Filedata") MultipartFile infile)
+    public String upload(@RequestParam("Filedata") MultipartFile infile,@ModelAttribute("curuser") VOLogon voLogon)
     {
         //取得文件名
 
