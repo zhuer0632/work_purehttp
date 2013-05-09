@@ -1,6 +1,9 @@
-*svn
-*.class
 target/
-*.jar
 .idea/
-workspace.xml
+*.jar
+*.war
+*.class
+*.swf
+*.swc
+*.log
+*.iml
