@@ -1,0 +1,7 @@
+*svn
+*.class
+target/
+*.jar
+.idea/
+workspace.xml
+work_purehttp.iml
