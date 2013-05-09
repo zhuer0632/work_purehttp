@@ -6,3 +6,4 @@
 *.swc
 *.log
 *.iml
+purehttp/target/
