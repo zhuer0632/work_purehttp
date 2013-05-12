@@ -1,6 +1,5 @@
 package com.comdev.common;
 
-import com.comdev.consts.SysConst;
 import org.nutz.dao.pager.Pager;
 import org.springframework.stereotype.Component;
 

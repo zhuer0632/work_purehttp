@@ -2,8 +2,7 @@
 package com.comdev.init;
 
 import com.comdev.ut.ClassMapping;
-import com.comdev.vos.VOFile;
-import com.comdev.vos.VONews;
+import com.comdev.vos.*;
 
 /**
  * User: zhu
@@ -15,7 +14,13 @@ public class TableGernerate
 
     public static void main(String[] args)
     {
+        ClassMapping.CreateTable(VOColumns.class);
+        ClassMapping.CreateTable(VODB.class);
+        ClassMapping.CreateTable(VOFile.class);
+        ClassMapping.CreateTable(VOLogon.class);
         ClassMapping.CreateTable(VONews.class);
+        ClassMapping.CreateTable(VOPet.class);
+        ClassMapping.CreateTable(VOTable.class);
     }
 
 

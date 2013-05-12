@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * Date: 2013-04-09
  * Time: 上午10:05
  */
-public class SysConst
+public class ConstSys
 {
 
     //项目地址   比如  "/bea"
@@ -18,6 +18,14 @@ public class SysConst
     public static final int PAGESIZE = 10;
 
     public static final AtomicInteger i =new AtomicInteger();
+
+
+
+    public static final String REPS_CODE = "reps_code";
+    public static final String REPS_DESC = "reps_desc";
+    public static final String REPS_DATA = "reps_data";
+
+
 
 
     public static List<String> imgList=new ArrayList<String>();

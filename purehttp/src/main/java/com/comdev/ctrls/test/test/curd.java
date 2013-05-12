@@ -1,7 +1,6 @@
 package com.comdev.ctrls.test.test;
 
 import com.comdev.common.Page;
-import com.comdev.consts.SysConst;
 import com.comdev.db.DbKit;
 import com.comdev.vos.VONews;
 import com.me.ut.string.StringUT;
@@ -10,8 +9,6 @@ import org.nutz.dao.Cnd;
 import org.nutz.dao.pager.Pager;
 import org.nutz.dao.sql.Criteria;
 import org.nutz.dao.util.cri.SimpleCriteria;
-import org.nutz.lang.Lang;
-import org.nutz.lang.random.StringGenerator;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;

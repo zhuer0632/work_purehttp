@@ -8,6 +8,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
@@ -45,14 +46,12 @@ public class login
 
     @RequestMapping("logout")
     @ResponseBody
-    public String logout(@ModelAttribute("curuser") VOLogon logon,
-                         SessionStatus status)
+    public String logout(@ModelAttribute("curuser") VOLogon logon, HttpServletRequest request)
     {
-        status.setComplete();
-        return "退出成功";
+        request.getSession().invalidate();
+//        status.setComplete();
+        return logon.getUsername() + "退出成功";
     }
-
-
 
 
 }

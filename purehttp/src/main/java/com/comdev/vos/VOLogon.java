@@ -1,10 +1,13 @@
 package com.comdev.vos;
 
+import org.nutz.dao.entity.annotation.Table;
+
 /**
  * User: zhu
  * Date: 13-5-5
  * Time: 上午4:12
  */
+@Table("t_logon")
 public class VOLogon
 {
 

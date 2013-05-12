@@ -2,18 +2,14 @@ package com.comdev.ctrls.test.test;
 
 import com.comdev.common.Page;
 import com.comdev.common.WebPath;
-import com.comdev.consts.SysConst;
-import com.me.ut.collecttion.CollectionUT;
+import com.comdev.consts.ConstSys;
 import com.me.ut.collecttion.ListUT;
-import com.me.ut.string.StringUT;
-import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.swing.plaf.ListUI;
 import java.util.*;
 
 /**
@@ -79,7 +75,7 @@ public class test
             out.add(String.valueOf(i)+"\\t");
         }
 
-        return out.size() % SysConst.PAGESIZE == 0 ? out.size() / SysConst.PAGESIZE : out.size() / SysConst.PAGESIZE + 1;
+        return out.size() % ConstSys.PAGESIZE == 0 ? out.size() / ConstSys.PAGESIZE : out.size() / ConstSys.PAGESIZE + 1;
 
     }
 
@@ -93,7 +89,7 @@ public class test
         {
             out.add(String.valueOf(i)+"&nbsp;&nbsp;&nbsp;");
         }
-        out = ListUT.cutByPage(out, pageno, SysConst.PAGESIZE);
+        out = ListUT.cutByPage(out, pageno, ConstSys.PAGESIZE);
         return out;
     }
 

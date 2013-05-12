@@ -1,6 +1,6 @@
 package com.comdev.init;
 
-import com.comdev.consts.SysConst;
+import com.comdev.consts.ConstSys;
 import org.apache.log4j.Logger;
 import org.springframework.web.context.ContextLoaderListener;
 
@@ -27,7 +27,7 @@ public class SysStart extends ContextLoaderListener implements ServletContextLis
     public void contextInitialized(ServletContextEvent event)
     {
         String syspath = event.getServletContext().getContextPath();
-        SysConst.SYS_PATH = syspath;
+        ConstSys.SYS_PATH = syspath;
         System.out.println("项目名称:" + syspath);
 
     }

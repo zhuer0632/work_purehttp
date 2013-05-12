@@ -1,7 +1,7 @@
 package com.comdev.ctrls;
 
 import com.comdev.common.WebPath;
-import com.comdev.consts.SysConst;
+import com.comdev.consts.ConstSys;
 import com.comdev.db.DbKit;
 import com.comdev.vos.VOFile;
 import com.comdev.vos.VOLogon;
@@ -45,7 +45,7 @@ public class file
         String suffix = filename.substring(filename.lastIndexOf('.') + 1, filename.length());
 
         //文件保存地址
-        String savefilename = DatetimeUT.getNowstr() + SysConst.i.incrementAndGet() + "." + suffix;
+        String savefilename = DatetimeUT.getNowstr() + ConstSys.i.incrementAndGet() + "." + suffix;
 
         //创建文件夹
         String year = DatetimeUT.getYear(new Date());
@@ -76,7 +76,7 @@ public class file
         DbKit.getDao().insert(vo);
 
         boolean img = false;
-        if (SysConst.imgList.contains(vo.getSuffix_()))
+        if (ConstSys.imgList.contains(vo.getSuffix_()))
         {
             img = true;
         }
@@ -131,7 +131,7 @@ public class file
             }
 
             //显示图片
-            if (SysConst.imgList.contains(vo.getSuffix_().toLowerCase()))
+            if (ConstSys.imgList.contains(vo.getSuffix_().toLowerCase()))
             {
                 if (vo.getSuffix_().equals("jpg"))
                 {
