@@ -86,10 +86,10 @@
 
     <div class="label_username">用户名：</div>
     <div>
-        <input type="text" name="usename" id="username" class="input"/>
+        <input type="text" name="usename" id="username" value="admin" class="input"/>
     </div>
     <div class="label_password">密码：</div>
-    <div><input type="text" name="password" id="password" class="input"/></div>
+    <div><input type="text" name="password" id="password" value="admin" class="input"/></div>
     <div class="button"><a href="javascript:login ()"><img src="/statics/images/login_but.jpg"></a></div>
 </div>
 

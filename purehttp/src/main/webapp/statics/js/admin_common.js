@@ -51,6 +51,40 @@ function openwinx(url, name, w, h)
 //	url = url+'/?pc_hash='+pc_hash;
     window.open(url, name, "top=100,left=400,width=" + w + ",height=" + h + ",toolbar=no,menubar=no,scrollbars=yes,resizable=yes,location=no,status=no");
 }
+
+
+function artdialog(url, args, title, w, h)
+{
+    if (!w)
+    {
+        w = 700;
+    }
+    if (!h)
+    {
+        h = 500;
+    }
+
+    art.dialog.open(url + "?" + args,
+            {
+                lock: true,
+                background: '#F2F2F2', // 背景色
+                opacity: 0.4,    // 透明度
+                width: w + 'px',
+                height: h + 'px',
+                drag: true,
+                title: title,
+                resize: true,
+                fixed: true,
+                ok: function () {
+//                    this.title('3秒后自动关闭').time(3);
+                    return formcheck();
+                },
+                cancelVal: '关闭',
+                cancel: true //为true等价于function(){}
+            });
+}
+
+
 //弹出对话框
 function omnipotent(id, linkurl, title, close_type, w, h)
 {
@@ -92,12 +126,12 @@ function time()
 
 function timer(fun, second)
 {
-    setTimeout(fun,second);
+    setTimeout(fun, second);
 }
 
-function fortimer(fun,second)
+function fortimer(fun, second)
 {
-    setInterval(fun,second);
+    setInterval(fun, second);
 }
 
 /**
