@@ -10,6 +10,7 @@ import com.comdev.online.ConstOnline;
 import com.comdev.vos.VODB;
 import com.comdev.vos.VOLogon;
 import com.comdev.vos.VONews;
+import com.comdev.vos.VOTable;
 import com.me.ut.string.StringUT;
 import org.nutz.dao.Cnd;
 import org.nutz.dao.entity.Record;
@@ -29,10 +30,10 @@ import java.util.Map;
  * Date: 13-4-21
  * Time: 下午2:37
  */
-@RequestMapping("shuju/meta/tablemanager/createtable")
+@RequestMapping("shuju/meta/tablemanager/")
 @Controller
 @SessionAttributes("curuser")
-public class createtable
+public class tablemanager
 {
 
     /**
@@ -40,11 +41,23 @@ public class createtable
      *
      * @return
      */
-    @RequestMapping("showpage_createtable")
+    @RequestMapping("showpage_list")
     public String showpage_createtable()
     {
-        return "/shuju/meta/tablemanager/showpage_createtable";
+        return "/shuju/meta/tablemanager/showpage_list";
     }
+
+    /**
+     * 修改某个表的属性(不是字段属性)的时候，显示页面
+     * @param objid_
+     * @return
+     */
+    @RequestMapping("showpage_adduptable")
+    public  String  showpage_adduptable(@RequestParam("objid_")String objid_)
+    {
+            return "shuju/meta/tablemanager/showpage_adduptable";
+    }
+
 
     /**
      * 点击某个表，列出其中的所有的字段
@@ -83,9 +96,8 @@ public class createtable
     @ResponseBody
     public Map tables(@RequestParam("pageno") int pageno, @RequestParam("args") String args, @ModelAttribute("curuser") VOLogon vologon, HttpServletRequest request)
     {
-        NutDao dao = ConstOnline.get(request);
-
-        List<Record> datass = dao.query("t1", null);//测试nutz是否可用
+//        NutDao dao = ConstOnline.get(request);
+//        List<Record> datass = dao.query("t1", null);//测试nutz是否可用
 
         Map out = new HashMap();
         Pager pager = new Pager();
@@ -111,10 +123,10 @@ public class createtable
         cri.desc("modifydate_");
 
         //不分页的情况下，使用搜索条件取得的所有数量
-        int allcount = DbKit.getDao().count(VONews.class, cri);
+        int allcount = DbKit.getDao().count(VOTable.class, cri);
 
         //取得实际要返回的数量
-        out.put("datas", DbKit.getDao().query(VONews.class, cri, pager));
+        out.put("datas", DbKit.getDao().query(VOTable.class, cri, pager));
 
         //%s是页码
         Pager.DEFAULT_PAGE_SIZE = pager.getPageSize();//把pagesize放在公共变量里

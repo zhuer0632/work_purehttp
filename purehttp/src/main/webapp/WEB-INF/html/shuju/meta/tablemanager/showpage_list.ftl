@@ -14,6 +14,8 @@
     <link media="screen" title="styles3" href="/statics/css/style/zh-cn-styles3.css" type="text/css" rel="alternate stylesheet">
     <link media="screen" title="styles4" href="/statics/css/style/zh-cn-styles4.css" type="text/css" rel="alternate stylesheet">
     <script src="/statics/js/jquery-1.8.3.min.js" type="text/javascript" language="javascript"></script>
+    <script src="/statics/js/art/jquery.artDialog.js" type="text/javascript" language="javascript"></script>
+    <script src="/statics/js/art/iframeTools.js" type="text/javascript" language="javascript"></script>
     <script src="/statics/js/admin_common.js" type="text/javascript" language="javascript"></script>
     <script src="/statics/js/commons/common.js" type="text/javascript" language="javascript"></script>
     <script src="/statics/js/commons/Base64.js" type="text/javascript" language="javascript"></script>
@@ -163,22 +165,17 @@
     $(function ()
     {
         //没有参数的;查询指定页数据
-
+        page(1);
     });
 
     function page(pageno, args)
     {
 
-//        $.get("/shuju/meta/tablemanager/createtable/initconn/?dbid=1111", function (data)
-//        {
-//            alert(data);
-//        });
-
         var base64 = new Base64();
         //多个参数需要用 {&}分开，key和value用{=}连接
 
         var args = ReplaceBase64(base64.encode("title_{=}" + $("#args_title").val() + "{&}content_{=}" + $("#args_content").val() + ""));
-        $.get("/shuju/meta/tablemanager/createtable/tables/?pageno=" + pageno + "&args=" + args + "&etag=" + time(), function (data)
+        $.get("/shuju/meta/tablemanager/tables/?pageno=" + pageno + "&args=" + args + "&etag=" + time(), function (data)
         {
             clearTableTr($("#tb"));
             $(data['datas']).each(function (index, em)
@@ -187,18 +184,25 @@
                         "                    <td align=\"center\"><input type=\"checkbox\" class=\"inputcheckbox \" name=\"objid_\" value=\"" + em['objid_'] + "\"></td>\n" +
                         "                    <td align=\"center\"><input type=\"text\" name=\"listorders[2]\" size=\"3\" value=\"0\" class=\"input-text-c input-text\"></td>\n" +
                         "                    <td align=\"center\">\n" +
-                        "                        <a href=\"/\" target=\"_blank\"><span style=\"\">" + em['title_'] + "</span></a></td>\n" +
+                        "                        <a href=\"/\" target=\"_blank\"><span style=\"\">" + em['tablename_'] + "</span></a></td>\n" +
+                        "                    <td align=\"center\" >"+em['label_']+"</td>\n" +
                         "                    <td align=\"center\" >0</td>\n" +
                         "                    <td align=\"center\" >0</td>\n" +
-                        "                    <td align=\"center\" >0</td>\n" +
-                        "                    <td align=\"center\">" + getTimeString(em['modifyDate_']) + "</td>\n" +
-                        "                    <td align=\"center\"><a href=\"javascript:;\" onclick=\"javascript:openwinx('/test/test/curd/show_edit/?objid_=" + em['objid_'] + "','')\">修改</a> | <a href=\"javascript:void(0)\">管理字段</a></td>\n" +
+                        "                    <td align=\"center\">" + getTimeString(em['modifydate_']) + "</td>\n" +
+//                        "                    <td align=\"center\"><a href=\"javascript:;\" onclick=\"javascript:openwinx('/test/test/curd/show_edit/?objid_=" + em['objid_'] + "','')\">修改</a> | <a href=\"javascript:void(0)\">管理字段</a></td>\n" +
+                        "                    <td align=\"center\"><a href=\"javascript:;\" onclick=\"javascript:artdialog('/shuju/meta/tablemanager/showpage_adduptable/?objid_=" + em['objid_'] + "','标题','标题',500,300)\">修改</a> | <a href=\"javascript:void(0)\">管理字段</a></td>\n" +
                         "</tr>";
                 bindTrInTable($("#tb"), tr);
             });
             //设置分页
             $("#pages").html(data['pages']);
         });
+    }
+
+    function formcheck()
+    {
+            alert("数据错误");
+            return false;
     }
 
     function confirm_delete()
@@ -257,11 +261,10 @@
     function initconn()
     {
 
-        $.get("/shuju/meta/tablemanager/createtable/initconn/?dbid=1111", function (data)
-        {
-              alert(data);
-            page(1);
-        });
+//        $.get("/shuju/meta/tablemanager/createtable/initconn/?dbid=1111", function (data)
+//        {
+//              alert(data);
+//        });
 
 
     }
