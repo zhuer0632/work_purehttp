@@ -2,7 +2,6 @@
 *.jar
 *.war
 *.class
-*.swf
 *.swc
 *.log
 *.iml
